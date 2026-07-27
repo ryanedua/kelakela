@@ -259,6 +259,10 @@
     "bodyHash": "df34f91037b27b6f",
     "updated": "2026-07-22"
   },
+  "src\\content\\guides\\american-customer-service.md": {
+    "bodyHash": "9693a115c08bb958",
+    "updated": "2026-07-27"
+  },
   "src\\content\\guides\\american-hold-time-too-long-alternatives.md": {
     "bodyHash": "80d2865857e1d016",
     "updated": "2026-07-22"
@@ -582,6 +586,10 @@
   "src\\content\\guides\\delta-customer-service-callback-option.md": {
     "bodyHash": "598204a7c4263e88",
     "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\delta-customer-service-guide.md": {
+    "bodyHash": "0f802a7d004a0ae1",
+    "updated": "2026-07-27"
   },
   "src\\content\\guides\\delta-customer-service-least-busy-hours.md": {
     "bodyHash": "5c5293e62f2fe489",
@@ -1038,6 +1046,10 @@
   "src\\content\\guides\\jetblue-customer-service-least-busy-hours.md": {
     "bodyHash": "409b2a774dc3f3cd",
     "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\jetblue-customer-service.md": {
+    "bodyHash": "32adaea73fa0849d",
+    "updated": "2026-07-27"
   },
   "src\\content\\guides\\jetblue-flight-disruption-rebooking.md": {
     "bodyHash": "a7c76e552f863bce",
@@ -1574,6 +1586,10 @@
   "src\\content\\guides\\united-customer-service-least-busy-hours.md": {
     "bodyHash": "939e81414ec26855",
     "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\united-customer-service.md": {
+    "bodyHash": "d7f2b5e03d527ccc",
+    "updated": "2026-07-27"
   },
   "src\\content\\guides\\united-flight-disruption-rebooking.md": {
     "bodyHash": "1b35285dc427b761",

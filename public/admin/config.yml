@@ -132,9 +132,9 @@ collections:
         pattern: ['^.{10,300}$', 'Keep it between 10 and 300 characters']
       - { name: heading, label: "On-page H1 (if different from SERP title)", widget: string, required: false }
       - name: description
-        label: "Meta description (70–311)"
+        label: "Meta description (2–311)"
         widget: text
-        pattern: ['^[\s\S]{70,311}$', 'Between 70 and 311 characters']
+        pattern: ['^[\s\S]{2,311}$', 'Between 2 and 311 characters']
       - name: targetQuery
         label: "Target query"
         widget: string

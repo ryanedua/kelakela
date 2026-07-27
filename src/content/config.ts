@@ -60,7 +60,7 @@ const guides = defineCollection({
     title: z.string().max(130),
     // Distinct from title. Title is for SERP, h1 is for the page.
     heading: z.string().optional(),
-    description: z.string().min(70).max(311),
+    description: z.string().min(2).max(311),
 
     // Which airlines this guide touches. Empty = cross-airline / general.
     airlines: z.array(z.enum(AIRLINES)).default([]),
