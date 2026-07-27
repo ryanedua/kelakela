@@ -1,0 +1,306 @@
+# Sveltia CMS — Decap-compatible config.
+# Sveltia reads the same schema as Decap but with a far better editor UX.
+# Swap the bundle in index.html if you ever want to fall back to Decap.
+
+backend:
+  name: github
+  repo: ryanedua/kelakela # placeholder
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+# Every edit becomes a pull request. For policy content this is the difference
+# between "someone fat-fingered a baggage fee" and "someone fat-fingered a
+# baggage fee and it went live to 40 pages."
+publish_mode: editorial_workflow
+
+collections:
+  # -------------------------------------------------------------------
+  # AIRLINE DATA — the single source of truth for every number on the site.
+  # Change a fee here once; every page referencing it updates on rebuild.
+  # This collection is why you won't be editing 40 files when Delta moves a price.
+  # -------------------------------------------------------------------
+  - name: airline_data
+    label: "Airline policy data"
+    label_singular: "Airline"
+    folder: "src/data/airlines"
+    extension: json
+    format: json
+    create: true
+    identifier_field: name
+    summary: "{{name}} — baggage last checked {{baggage.verified}}"
+    fields:
+      - { name: slug, label: Slug, widget: string }
+      - { name: name, label: Airline name, widget: string }
+      - name: iata
+        label: IATA code
+        widget: string
+        pattern: ['^[A-Z0-9]{2}$', 'Two characters, uppercase']
+      - { name: officialSite, label: Official site, widget: string }
+      - { name: note, label: Internal note, widget: text, required: false }
+
+      - name: baggage
+        label: "Checked bags"
+        widget: object
+        fields:
+          - { name: label, label: Label, widget: string, default: "Checked bags" }
+          - name: verified
+            label: "Date verified against source"
+            widget: datetime
+            date_format: 'YYYY-MM-DD'
+            time_format: false
+            picker_utc: true
+          - { name: sourceUrl, label: "Source URL (the airline's own page)", widget: string }
+          - name: policyEffective
+            label: "Policy effective from"
+            widget: datetime
+            date_format: 'YYYY-MM-DD'
+            time_format: false
+            picker_utc: true
+            required: false
+          - name: rows
+            label: Rows
+            widget: list
+            fields:
+              - { name: item, label: Item, widget: string }
+              - { name: value, label: Value, widget: string }
+              - name: unit
+                label: Unit
+                widget: select
+                required: false
+                options: ['USD', 'lb', 'kg', 'in', 'cm', 'hr', 'days', '']
+          - name: caveats
+            label: Caveats
+            widget: list
+            required: false
+            field: { name: text, label: Caveat, widget: string }
+
+      - name: changesCancellations
+        label: "Changes and cancellations"
+        widget: object
+        required: false
+        fields:
+          - { name: label, label: Label, widget: string, default: "Changes and cancellations" }
+          - name: verified
+            label: "Date verified against source"
+            widget: datetime
+            date_format: 'YYYY-MM-DD'
+            time_format: false
+            picker_utc: true
+          - { name: sourceUrl, label: "Source URL", widget: string }
+          - name: policyEffective
+            label: "Policy effective from"
+            widget: datetime
+            date_format: 'YYYY-MM-DD'
+            time_format: false
+            picker_utc: true
+            required: false
+          - name: rows
+            label: Rows
+            widget: list
+            fields:
+              - { name: item, label: Item, widget: string }
+              - { name: value, label: Value, widget: string }
+              - { name: unit, label: Unit, widget: string, required: false }
+          - name: caveats
+            label: Caveats
+            widget: list
+            required: false
+            field: { name: text, label: Caveat, widget: string }
+
+  # -------------------------------------------------------------------
+  # GUIDES — topic-first. Cross-airline and scenario pages.
+  # This is where the winnable traffic is. airline.com answers these badly.
+  # -------------------------------------------------------------------
+  - name: guides
+    label: Guides
+    label_singular: Guide
+    folder: "src/content/guides"
+    extension: md
+    create: true
+    slug: "{{fields.topic}}-{{slug}}"
+    preview_path: "guides/{{slug}}"
+    summary: "{{title}}  ·  updated {{updated}}"
+    sortable_fields: ['updated', 'topic', 'title']
+    view_groups:
+      - { label: Topic, field: topic }
+    fields:
+      - name: title
+        label: "SERP title (max 300)"
+        widget: string
+        pattern: ['^.{10,300}$', 'Keep it between 10 and 300 characters']
+      - { name: heading, label: "On-page H1 (if different from SERP title)", widget: string, required: false }
+      - name: description
+        label: "Meta description (70–311)"
+        widget: text
+        pattern: ['^[\s\S]{70,311}$', 'Between 70 and 311 characters']
+      - name: targetQuery
+        label: "Target query"
+        widget: string
+        hint: "The one query this page is built to win. If you can't name it, don't write the page."
+      - name: verdict
+        label: "Short answer (40–1000)"
+        widget: text
+        pattern: ['^[\s\S]{40,1000}$', 'Between 40 and 1000 characters']
+        hint: "The answer, before the argument. Renders at the top, above the prose. This is also what an AI Overview will lift — better it lifts a sentence you wrote."
+      - name: topic
+        label: Topic
+        widget: select
+        options:
+          - baggage
+          - booking
+          - changes-cancellations
+          - refunds
+          - delays-compensation
+          - check-in
+          - seating
+          - loyalty
+          - special-assistance
+          - pets
+          - international
+      - name: airlines
+        label: Airlines covered
+        widget: select
+        multiple: true
+        required: false
+        options: [delta, united, american, southwest, alaska, jetblue, frontier, spirit, aeroflot, air-china, copa, emirates, iberia, klm, qantas, singapore ,vietnam ,aerolineas-argentinas ,air-france ,british ,ethiopian ,indigo ,kenya ,qatar ,tui ,virgin-atlantic ,aeromexico ,air-new-zealand ,cathay-pacific ,el-al ,flydubai ,japan ,korean-air ,royal-air-maroc ,turkish ,xiamen ,air-canada ,all-nippon ,china-southern ,eva-air ,hainan ,jeju-air ,lufthansa ,swiss ,avianca ,frontier ,spirit]
+        hint: "Leave empty for cross-airline guides."
+      - name: published
+        label: Published
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+      - name: updated
+        label: "Last updated"
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+        hint: "Only bump this when the content actually changed. Fake freshness gets caught and it costs you."
+      - name: verifiedAgainstSource
+        label: "Last verified against airline source"
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+        required: false
+      - name: isHowTo
+        label: "Emit HowTo schema"
+        widget: boolean
+        default: false
+        hint: "Only tick this if the body is a real ordered sequence of steps."
+      - name: faq
+        label: FAQ
+        widget: list
+        required: false
+        hint: "These must also appear in the visible body. Marking up invisible FAQs is a manual-action risk."
+        fields:
+          - { name: q, label: Question, widget: string }
+          - { name: a, label: Answer, widget: text }
+      - name: sources
+        label: Sources
+        widget: list
+        required: false
+        fields:
+          - { name: label, label: Label, widget: string }
+          - { name: url, label: URL, widget: string }
+          - name: retrieved
+            label: Retrieved
+            widget: datetime
+            date_format: 'YYYY-MM-DD'
+            time_format: false
+            picker_utc: true
+      - { name: draft, label: Draft, widget: boolean, default: true }
+      - { name: noindex, label: Noindex, widget: boolean, default: false }
+      - { name: canonical, label: "Canonical override", widget: string, required: false }
+      - { name: body, label: Body, widget: markdown }
+
+  # -------------------------------------------------------------------
+  # POLICY PAGES — airline-first reference. Prose is thin by design;
+  # the numbers come from airline_data, not from the writer's memory.
+  # -------------------------------------------------------------------
+  - name: policies
+    label: "Policy pages"
+    label_singular: "Policy page"
+    folder: "src/content/policies"
+    extension: md
+    create: true
+    slug: "{{fields.airline}}-{{fields.topic}}"
+    preview_path: "airlines/{{fields.airline}}/{{fields.topic}}"
+    summary: "{{airline}} / {{topic}}  ·  verified {{verifiedAgainstSource}}"
+    sortable_fields: ['verifiedAgainstSource', 'airline', 'topic']
+    view_groups:
+      - { label: Airline, field: airline }
+    fields:
+      - name: title
+        label: "SERP title (max 70)"
+        widget: string
+        pattern: ['^.{10,70}$', 'Between 10 and 70 characters']
+      - { name: heading, label: "On-page H1 (if different)", widget: string, required: false }
+      - name: description
+        label: "Meta description (70–160)"
+        widget: text
+        pattern: ['^[\s\S]{70,160}$', 'Between 70 and 160 characters']
+      - { name: targetQuery, label: "Target query", widget: string }
+      - { name: airline, label: Airline, widget: select, options: [delta, united, american, southwest, alaska, jetblue, frontier, spirit, aeroflot, air-china, copa, emirates, iberia, klm, qantas, singapore ,vietnam ,aerolineas-argentinas ,air-france ,british ,ethiopian ,indigo ,kenya ,qatar ,tui ,virgin-atlantic ,aeromexico ,air-new-zealand ,cathay-pacific ,el-al ,flydubai ,japan ,korean-air ,royal-air-maroc ,turkish ,xiamen ,air-canada ,all-nippon ,china-southern ,eva-air ,hainan ,jeju-air ,lufthansa ,swiss ,avianca ,frontier ,spirit] }
+      - name: topic
+        label: Topic
+        widget: select
+        options: [baggage, changes-cancellations, refunds, delays-compensation, check-in, seating, pets]
+      - name: dataKey
+        label: "Data key"
+        widget: select
+        options: [baggage, changesCancellations]
+        hint: "Which block in the airline's JSON file to render as the data card."
+      - name: published
+        label: Published
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+      - name: updated
+        label: "Last updated"
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+      - name: verifiedAgainstSource
+        label: "Last verified against airline source"
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+      - name: policyEffective
+        label: "Airline's policy effective date"
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+        required: false
+        hint: "When the AIRLINE's rule took effect — not when you wrote about it. These are different dates."
+      - name: faq
+        label: FAQ
+        widget: list
+        required: false
+        fields:
+          - { name: q, label: Question, widget: string }
+          - { name: a, label: Answer, widget: text }
+      - name: sources
+        label: "Sources (at least one required)"
+        widget: list
+        min: 1
+        fields:
+          - { name: label, label: Label, widget: string }
+          - { name: url, label: URL, widget: string }
+          - name: retrieved
+            label: Retrieved
+            widget: datetime
+            date_format: 'YYYY-MM-DD'
+            time_format: false
+            picker_utc: true
+      - { name: draft, label: Draft, widget: boolean, default: true }
+      - { name: noindex, label: Noindex, widget: boolean, default: false }
+      - { name: canonical, label: "Canonical override", widget: string, required: false }
+      - { name: body, label: Body, widget: markdown }

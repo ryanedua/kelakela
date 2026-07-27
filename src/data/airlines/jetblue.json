@@ -1,0 +1,32 @@
+{
+  "slug": "jetblue",
+  "name": "JetBlue",
+  "iata": "B6",
+  "officialSite": "https://www.jetblue.com",
+  "note": "JetBlue's bag fee moves on four axes at once: fare brand, route, peak vs off-peak date, and whether you pay more than 24 hours before departure. The block below is the single most common case — Blue/Blue Basic/Blue Extra, US and nearby, off-peak, prepaid. Every other combination costs more and is listed in the caveats.",
+
+  "baggage": {
+    "label": "Checked bags, US and nearby, off-peak, prepaid",
+    "verified": "2026-07-17",
+    "sourceUrl": "https://www.jetblue.com/help/baggage",
+    "policyEffective": null,
+    "rows": [
+      { "item": "First checked bag", "value": "45", "unit": "USD" },
+      { "item": "Second checked bag", "value": "59", "unit": "USD" },
+      { "item": "Third bag or more", "value": "200", "unit": "USD" },
+      { "item": "Max weight per bag", "value": "50", "unit": "lb" },
+      { "item": "Max linear dimensions", "value": "62", "unit": "in" }
+    ],
+    "caveats": [
+      "Blue, Blue Basic, Blue Extra and EvenMore fares within the US, Latin America, Caribbean and Canada. Off-peak dates, paid more than 24 hours before departure.",
+      "Paying inside 24 hours costs more: 49 USD first bag, 69 USD second. Prepaying saves up to 10 USD per bag.",
+      "Peak dates cost more again. JetBlue publishes the peak calendar, and it covers most of June, July and August 2026, plus Thanksgiving and the winter holidays.",
+      "Transatlantic is a different schedule entirely: Blue Basic pays 75 USD first bag off-peak, while Blue, Blue Plus, Blue Extra and EvenMore include the first bag free.",
+      "Blue Plus includes the first bag. Mint includes two bags at 70 lb. Mosaic 2-4 includes two bags.",
+      "JetBlue Plus and Premier cardholders get the first bag free on JetBlue-operated flights only. Codeshares and partner-operated flights are excluded.",
+      "Oversize (63-80 in) is 150 USD and overweight (51-99 lb) is 150 USD, and they stack: a bag that is both pays both. Over 80 in or over 99 lb is refused.",
+      "Ecuador, Dominican Republic, Guyana, Haiti and Trinidad & Tobago each carry their own bag limits and lower weight ceilings.",
+      "Bag fees are refundable only if the entire booking is cancelled before departure."
+    ]
+  }
+}

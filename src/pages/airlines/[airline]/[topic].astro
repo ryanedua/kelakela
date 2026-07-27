@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import PolicyLayout from '../../../layouts/PolicyLayout.astro';
+
+export async function getStaticPaths() {
+  const policies = await getCollection('policies', ({ data }) => !data.draft);
+
+  // Eager glob: the JSON is the source of truth for every figure, so it must
+  // be resolved at build time. A missing file should break the build loudly,
+  // not silently render a policy page with no numbers on it.
+  const files = import.meta.glob<Record<string, any>>('../../../data/airlines/*.json', {
+    eager: true,
+  });
+
+  const byAirline = new Map<string, Record<string, any>>();
+  for (const [path, mod] of Object.entries(files)) {
+    const data = (mod as any).default ?? mod;
+    byAirline.set(data.slug ?? path.split('/').pop()!.replace('.json', ''), data);
+  }
+
+  return policies.map((entry) => {
+    const airlineData = byAirline.get(entry.data.airline);
+    if (!airlineData) {
+      throw new Error(
+        `${entry.slug}: no data file for airline "${entry.data.airline}". ` +
+        `Expected src/data/airlines/${entry.data.airline}.json`
+      );
+    }
+    return {
+      params: { airline: entry.data.airline, topic: entry.data.topic },
+      props: { entry, airlineData },
+    };
+  });
+}
+
+const { entry, airlineData } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<PolicyLayout entry={entry} airlineData={airlineData}>
+  <Content />
+</PolicyLayout>

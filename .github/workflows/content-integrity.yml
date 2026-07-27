@@ -1,0 +1,107 @@
+name: Content integrity
+
+on:
+  pull_request:
+    paths:
+      - 'src/content/**'
+      - 'src/data/**'
+  push:
+    branches: [main]
+  schedule:
+    # Monday 06:00 UTC. Fees drift; this is the nag that keeps the
+    # site's central claim — "we checked, here's the date" — true.
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  freshness:
+    name: Freshness
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Blocks two things: a changed body with a stale `updated`, and an
+      # `updated` bump with no content change. The second is the one that
+      # matters — mass date-bumps to fake freshness are visible from outside.
+      - name: Verify updated dates are honest
+        run: node scripts/check-freshness.mjs
+
+      - name: Verify FAQ schema matches visible text
+        run: node scripts/check-faq-visibility.mjs
+
+  stale:
+    name: Stale data audit
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Audit
+        id: audit
+        run: |
+          node scripts/check-stale.mjs
+          node scripts/check-stale.mjs --json > /tmp/stale.json
+          echo "critical=$(jq '[.[] | select(.status=="critical")] | length' /tmp/stale.json)" >> $GITHUB_OUTPUT
+          echo "warn=$(jq '[.[] | select(.status=="warn")] | length' /tmp/stale.json)" >> $GITHUB_OUTPUT
+
+      - name: Open re-verification issue
+        if: steps.audit.outputs.warn != '0' || steps.audit.outputs.critical != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const rows = JSON.parse(fs.readFileSync('/tmp/stale.json', 'utf8'))
+              .filter(r => r.status !== 'ok');
+
+            const line = r =>
+              `- [ ] **${r.airline}** / \`${r.block}\` — ${r.age} days (${r.verified})` +
+              (r.sourceUrl ? `\n      ${r.sourceUrl}` : '');
+
+            const crit = rows.filter(r => r.status === 'critical');
+            const warn = rows.filter(r => r.status === 'warn');
+
+            let body = 'Weekly audit of `verified` dates in `src/data/airlines/`.\n\n';
+            if (crit.length) {
+              body += `### Over 180 days — noindex candidates\n\n${crit.map(line).join('\n')}\n\n`;
+            }
+            if (warn.length) {
+              body += `### Over 90 days — already flagged to readers\n\n${warn.map(line).join('\n')}\n\n`;
+            }
+            body += 'Re-check each figure against the airline page, then bump `verified`.\n';
+            body += 'Do **not** bump `updated` on articles unless their prose actually changed.\n';
+
+            const title = `Re-verify airline data (${crit.length} critical, ${warn.length} stale)`;
+
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'stale-data',
+            });
+
+            if (existing.data.length) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.data[0].number,
+                title,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['stale-data'],
+              });
+            }

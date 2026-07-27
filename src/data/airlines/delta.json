@@ -1,0 +1,29 @@
+{
+  "slug": "delta",
+  "name": "Delta Air Lines",
+  "iata": "DL",
+  "officialSite": "https://www.delta.com",
+  "note": "Delta renamed its fare products: Main, Comfort, Premium Select, First, One — each sold as Basic, Classic, Extra or Refundable. Baggage fees below are Comfort and Main on domestic US routes. Delta states the published fees apply to tickets issued on or after today and keeps a separate page for earlier ticketing dates, so the figure a passenger was actually charged may differ from the one published now.",
+
+  "baggage": {
+    "label": "Checked bags, US domestic",
+    "verified": "2026-07-17",
+    "sourceUrl": "https://www.delta.com/us/en/baggage/overview",
+    "policyEffective": null,
+    "rows": [
+      { "item": "First checked bag", "value": "45", "unit": "USD" },
+      { "item": "Second checked bag", "value": "55", "unit": "USD" },
+      { "item": "Max weight per bag", "value": "50", "unit": "lb" },
+      { "item": "Max linear dimensions", "value": "62", "unit": "in" }
+    ],
+    "caveats": [
+      "Delta Comfort and Delta Main fares on domestic US flights. Fees are each way, not round trip.",
+      "Free first bag for Delta SkyMiles Medallion members and eligible Delta SkyMiles American Express cardholders; eligible Basic Card Members also get the second bag free on domestic Delta flights.",
+      "The 50 lb limit is for Main, Comfort and Premium Select. Delta One and Delta First allow 70 lb per piece.",
+      "Delta publishes these fees as applying to tickets issued on or after today, and keeps a separate page for earlier ticketing dates. What you were charged may not match what is published now.",
+      "Free bag benefits for Amex cardholders do not apply on partner-operated flights.",
+      "Travel to or from Key West is limited to one checked bag, and Delta states this overrides all exceptions.",
+      "At most domestic airports, SkyMiles members can pay bag fees with miles instead of cash during check-in. Excess and overweight bags cannot be paid with miles."
+    ]
+  }
+}

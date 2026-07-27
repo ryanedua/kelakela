@@ -1,0 +1,130 @@
+---
+import Seo from '../components/Seo.astro';
+import Shell from '../components/Shell.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Seo
+      title="How We Check — Method and Sourcing"
+      description="Every figure on this site is read off the airline's own published page and stamped with the date. Here is exactly how that works, and where it falls short."
+      published={new Date('2026-07-01')}
+      updated={new Date('2026-07-15')}
+    />
+  </head>
+  <body>
+    <Shell section="method">
+      <div class="method">
+        <h1>How we check</h1>
+
+        <p class="lede">
+          The only reason to read this site instead of the airline's is that we
+          tell you when we last looked. That claim is worth nothing unless the
+          mechanics behind it are visible, so here they are.
+        </p>
+
+        <div class="prose">
+          <h2>Where the numbers come from</h2>
+          <p>
+            Every fee, weight limit, and deadline is read off the carrier's own
+            published page — not from a press release, not from another guide site,
+            and not from memory. Each figure is stored with the date it was read and
+            a link to the page it was read from. Both appear on the page you're
+            looking at, next to the number itself.
+          </p>
+          <p>
+            The figures live in one place per airline. When a fee changes, it is
+            corrected once and every page quoting it updates together. This is
+            deliberate: the alternative is a number written into forty articles,
+            thirty-nine of which get updated.
+          </p>
+
+          <h2>What the dates mean</h2>
+          <p>
+            Three different dates appear on this site and they are not
+            interchangeable.
+          </p>
+          <p>
+            <strong>Checked</strong> is when a human last compared the figure against
+            the airline's page. <strong>Policy in effect since</strong> is when the
+            airline's rule started applying — that's their date, not ours.
+            <strong>Updated</strong> is when the article's prose last changed.
+          </p>
+          <p>
+            An article can be months old and still correct. A figure checked
+            yesterday can describe a policy that took effect two years ago. Collapsing
+            these into a single "last updated" stamp is how most sites end up
+            implying a freshness they don't have, and we'd rather show you three
+            honest dates than one flattering one.
+          </p>
+
+          <h2>When we're overdue</h2>
+          <p>
+            After ninety days without a re-check, the figure flags itself on the live
+            page, in red, to you. We don't wait for someone to notice internally. After
+            six months, the page should come out of search results entirely rather
+            than serve you a number we no longer stand behind.
+          </p>
+          <p>
+            You will see amber and red dates on this site. That is the system
+            working, not failing. A board showing only green would be a board nobody
+            had reason to trust.
+          </p>
+
+          <h2>What we don't do</h2>
+          <p>
+            We don't bump the date on an article to make it look fresh. The
+            publishing pipeline compares each article's text against its previous
+            version and refuses to accept a date change with no matching content
+            change — so this isn't a promise, it's a constraint.
+          </p>
+          <p>
+            We don't generate pages from a template to cover a topic we have nothing
+            to say about. Every page has to name the one question it exists to answer
+            before it can be published.
+          </p>
+          <p>
+            We don't mark up questions and answers for search engines unless they're
+            visible to you on the page.
+          </p>
+
+          <h2>Where this falls short</h2>
+          <p>
+            Airline policy is full of exceptions that a fee table cannot hold: elite
+            status, co-brand cards, route-specific rules, codeshare quirks, and agent
+            discretion at the counter. We flag the ones that catch people out most
+            often, but the caveats on a page are never the complete set.
+          </p>
+          <p>
+            We are not affiliated with any airline. When a figure here disagrees with
+            the airline's own page, theirs is correct and ours is stale — the link to
+            check is on every card, and we'd rather you use it.
+          </p>
+        </div>
+      </div>
+    </Shell>
+
+    <style>
+      .method h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 5vw, 2.5rem);
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        color: var(--navy);
+        margin: 0 0 0.7rem;
+      }
+      .lede {
+        font-size: 1.12rem;
+        line-height: 1.6;
+        max-width: 58ch;
+        margin: 0 0 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 0.5px solid var(--rule);
+      }
+      .method .prose { max-width: 62ch; }
+    </style>
+  </body>
+</html>

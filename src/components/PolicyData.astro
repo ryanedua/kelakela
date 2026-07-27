@@ -1,0 +1,166 @@
+---
+/**
+ * The signature element.
+ *
+ * Every number on this site comes through here, and every number arrives
+ * with the date it was checked and a link to where it was checked against.
+ * A fee with no date is a rumour. This component makes it structurally
+ * impossible to publish one.
+ */
+interface Row { item: string; value: string; unit: string }
+
+interface Props {
+  label: string;
+  rows: Row[];
+  verified: string;
+  sourceUrl: string;
+  policyEffective?: string;
+  caveats?: string[];
+  airlineName: string;
+}
+
+const { label, rows, verified, sourceUrl, policyEffective, caveats = [], airlineName } = Astro.props;
+
+const fmt = (d: string) =>
+  new Date(d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+const daysSince = Math.floor((Date.now() - new Date(verified).getTime()) / 86_400_000);
+// Airline fees move. Ninety days is when I stop trusting my own page.
+const stale = daysSince > 90;
+---
+<section class="policy-data" aria-labelledby="pd-heading">
+  <header class="policy-data__head">
+    <p class="policy-data__eyebrow">{airlineName}</p>
+    <h2 id="pd-heading" class="policy-data__title">{label}</h2>
+  </header>
+
+  <dl class="policy-data__rows">
+    {rows.map((r) => (
+      <div class="policy-data__row">
+        <dt>{r.item}</dt>
+        <dd>
+          <span class="policy-data__value">{r.value}</span>
+          {r.unit && <span class="policy-data__unit">{r.unit}</span>}
+        </dd>
+      </div>
+    ))}
+  </dl>
+
+  {caveats.length > 0 && (
+    <ul class="policy-data__caveats">
+      {caveats.map((c) => <li>{c}</li>)}
+    </ul>
+  )}
+
+  <footer class="policy-data__stamp">
+    <p>
+      Checked against {airlineName}'s published policy on <time datetime={verified}>{fmt(verified)}</time>.
+      {stale && <strong class="policy-data__stale"> This may be out of date — confirm before you fly.</strong>}
+    </p>
+    {policyEffective && (
+      <p class="policy-data__effective">
+        Policy in effect since <time datetime={policyEffective}>{fmt(policyEffective)}</time>.
+      </p>
+    )}
+    <p>
+      <a href={sourceUrl} rel="nofollow noopener" target="_blank">Read {airlineName}'s own page</a>
+    </p>
+  </footer>
+</section>
+
+<style>
+  .policy-data {
+    --pd-navy: #0B1F3A;
+    --pd-paper: #F7F5F0;
+    --pd-amber: #E8B33D;
+    --pd-slate: #7A8FA6;
+    --pd-red: #C4403A;
+
+    background: var(--pd-navy);
+    color: var(--pd-paper);
+    border-radius: 2px;
+    padding: 1.75rem;
+    margin: 2.5rem 0;
+  }
+
+  .policy-data__eyebrow {
+    font-family: var(--font-utility);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pd-amber);
+    margin: 0 0 0.35rem;
+  }
+
+  .policy-data__title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.25rem;
+  }
+
+  .policy-data__rows { margin: 0; }
+
+  .policy-data__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgb(247 245 240 / 0.12);
+  }
+  .policy-data__row:last-child { border-bottom: 0; }
+
+  .policy-data__row dt {
+    font-size: 0.9rem;
+    color: rgb(247 245 240 / 0.82);
+  }
+
+  .policy-data__row dd { margin: 0; white-space: nowrap; }
+
+  /* Numbers are data, so they get set as data. */
+  .policy-data__value {
+    font-family: var(--font-utility);
+    font-variant-numeric: tabular-nums;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--pd-amber);
+  }
+
+  .policy-data__unit {
+    font-family: var(--font-utility);
+    font-size: 0.75rem;
+    color: var(--pd-slate);
+    margin-left: 0.3rem;
+  }
+
+  .policy-data__caveats {
+    margin: 1.25rem 0 0;
+    padding-left: 1rem;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: rgb(247 245 240 / 0.7);
+  }
+  .policy-data__caveats li { margin-bottom: 0.35rem; }
+
+  .policy-data__stamp {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(247 245 240 / 0.12);
+    font-family: var(--font-utility);
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: var(--pd-slate);
+  }
+  .policy-data__stamp p { margin: 0 0 0.3rem; }
+  .policy-data__stamp a { color: var(--pd-paper); text-decoration: underline; }
+  .policy-data__stamp a:focus-visible { outline: 2px solid var(--pd-amber); outline-offset: 2px; }
+
+  .policy-data__stale { color: var(--pd-red); }
+
+  @media (max-width: 480px) {
+    .policy-data { padding: 1.25rem; }
+    .policy-data__row { flex-direction: column; gap: 0.15rem; }
+  }
+</style>

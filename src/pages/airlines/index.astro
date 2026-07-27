@@ -1,0 +1,232 @@
+---
+import { getCollection } from 'astro:content';
+import Seo from '../../components/Seo.astro';
+import Shell from '../../components/Shell.astro';
+import { verifiedBlocks, parseVerified } from '../../data/verified';
+
+const files = import.meta.glob<Record<string, any>>('../../data/airlines/*.json', { eager: true });
+const airlines = Object.values(files)
+  .map((m: any) => m.default ?? m)
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const policies = await getCollection('policies', ({ data }) => !data.draft && !data.noindex);
+
+
+
+/** Oldest verification date across an airline's data blocks. Showing the worst
+ *  one is the honest summary — an airline is only as current as its stalest
+ *  figure, and averaging would hide exactly what a reader needs to see. */
+function oldestCheck(data: Record<string, any>) {
+  const dates = verifiedBlocks(data).map(([, b]) => b.verified as string);
+  if (!dates.length) return null;
+  return dates.sort()[0];
+}
+
+const rows = airlines.map((a) => {
+  const oldest = oldestCheck(a);
+  const oldestDate = oldest ? parseVerified(oldest) : null;
+  const age = oldestDate ? Math.floor((Date.now() - oldestDate.getTime()) / 86_400_000) : null;
+  return {
+    ...a,
+    oldest,
+    age,
+    status: age === null ? 'none' : age > 180 ? 'critical' : age > 90 ? 'stale' : 'ok',
+    pages: policies.filter((p) => p.data.airline === a.slug),
+  };
+});
+
+/** Split rather than hide. A carrier we haven't checked yet is listed, named,
+ *  and plainly marked — but not linked, because its page doesn't exist and
+ *  won't until someone reads the figures off the airline's site.
+ *
+ *  Showing the gap is the honest move and costs nothing. Hiding it would imply
+ *  the site covers six carriers when it covers one; linking to an empty page
+ *  would be worse than both. */
+const published = rows.filter((r) => r.status !== 'none');
+const pending = rows.filter((r) => r.status === 'none');
+
+const fmt = (d: string) =>
+  new Date(d).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+
+const TOPIC_LABELS: Record<string, string> = {
+  baggage: 'Baggage',
+  'changes-cancellations': 'Changes and cancellations',
+  refunds: 'Refunds',
+  'delays-compensation': 'Delays',
+  'check-in': 'Check-in',
+  seating: 'Seating',
+  pets: 'Pets',
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Seo
+      title="Airline Policies — Fees and Rules, With the Date We Checked"
+      description="Baggage fees, change rules, and refund policies for six US carriers. Every figure carries the date it was last checked against the airline's own published page."
+      published={new Date('2026-07-01')}
+      updated={new Date()}
+    />
+  </head>
+  <body>
+    <Shell section="airlines">
+      <div class="index">
+        <h1>Airlines</h1>
+        <p class="lede">
+          Every figure here was read off the airline's own page on the date shown.
+          Where we haven't checked recently, we say so rather than let it sit.
+        </p>
+
+        <ul class="carriers">
+          {published.map((a) => (
+            <li class="carrier">
+              <div class="carrier__head">
+                <a href={`/airlines/${a.slug}/`} class="carrier__name">{a.name}</a>
+                <span class={`carrier__check carrier__check--${a.status}`}>
+                  checked {fmt(a.oldest!)}
+                </span>
+              </div>
+              {a.pages.length > 0 && (
+                <ul class="carrier__pages">
+                  {a.pages.map((p) => (
+                    <li>
+                      <a href={`/airlines/${a.slug}/${p.data.topic}/`}>
+                        {TOPIC_LABELS[p.data.topic]}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        {pending.length > 0 && (
+          <section class="pending" aria-labelledby="pending-h">
+            <h2 id="pending-h">Not yet checked</h2>
+            <p class="pending__note">
+              We haven't read these carriers' figures off their own pages yet, so
+              there's nothing here worth publishing. They'll appear above once we have.
+            </p>
+            <ul>
+              {pending.map((a) => (
+                <li>
+                  <span class="pending__name">{a.name}</span>
+                  <a href={a.officialSite} rel="nofollow noopener" target="_blank">
+                    their site
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </div>
+    </Shell>
+
+    <style>
+      .index h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 5vw, 2.6rem);
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        color: var(--navy);
+        margin: 0 0 0.6rem;
+      }
+      .lede {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 54ch;
+        margin: 0 0 2.5rem;
+      }
+
+      .carriers { list-style: none; margin: 0; padding: 0; }
+      .carrier {
+        padding: 1rem 0;
+        border-bottom: 0.5px solid var(--rule-soft);
+      }
+      .carrier__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+      }
+      .carrier__name {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--navy);
+        text-decoration: none;
+      }
+      .carrier__name:hover { text-decoration: underline; }
+
+      .carrier__check {
+        font-family: var(--font-utility);
+        font-size: 0.66rem;
+        white-space: nowrap;
+      }
+      .carrier__check--ok { color: var(--slate); }
+      .carrier__check--stale { color: var(--amber); }
+      .carrier__check--critical { color: var(--red); }
+
+      .pending {
+        margin-top: 2.5rem;
+        padding-top: 1.5rem;
+        border-top: 0.5px solid var(--rule);
+      }
+      .pending h2 {
+        font-family: var(--font-utility);
+        font-size: 0.66rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: var(--slate);
+        margin: 0 0 0.5rem;
+      }
+      .pending__note {
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: var(--slate);
+        max-width: 58ch;
+        margin: 0 0 1rem;
+      }
+      .pending ul { list-style: none; margin: 0; padding: 0; }
+      .pending li {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        padding: 0.5rem 0;
+        border-bottom: 0.5px solid var(--rule-soft);
+      }
+      .pending__name { color: var(--slate); font-size: 0.95rem; }
+      .pending a {
+        font-family: var(--font-utility);
+        font-size: 0.66rem;
+        color: var(--slate);
+      }
+
+      .carrier__pages {
+        list-style: none;
+        margin: 0.5rem 0 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 1rem;
+      }
+      .carrier__pages a {
+        font-size: 0.88rem;
+        color: var(--ink);
+        text-decoration: none;
+        border-bottom: 1px solid var(--rule);
+      }
+      .carrier__pages a:hover { color: var(--navy); border-color: var(--navy); }
+
+      @media (max-width: 560px) {
+        .carrier__head { flex-direction: column; gap: 0.2rem; }
+      }
+    </style>
+  </body>
+</html>

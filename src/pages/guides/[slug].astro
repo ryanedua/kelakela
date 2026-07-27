@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+export async function getStaticPaths() {
+  // Drafts never build. There is no preview-in-prod escape hatch on purpose:
+  // a half-written page about airline policy is worse than no page.
+  const guides = await getCollection('guides', ({ data }) => !data.draft);
+  return guides.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await entry.render();
+---
+
+<GuideLayout entry={entry} headings={headings}>
+  <Content />
+</GuideLayout>

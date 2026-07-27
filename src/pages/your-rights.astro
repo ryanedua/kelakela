@@ -1,0 +1,453 @@
+---
+/**
+ * /your-rights/ — the DOT hub.
+ *
+ * Built as one page rather than five. The rules interlock: the refund
+ * threshold only makes sense next to the fact that there is no compensation
+ * mandate, and denied boarding only makes sense next to the reasons it
+ * doesn't apply. Splitting them now would produce five thin pages that each
+ * withhold the context needed to read the others.
+ *
+ * Every figure here comes from DOT's own pages, checked on the date shown.
+ * The denied boarding amounts in particular are worth stating carefully:
+ * several widely-cited sources still print $775/$1,550, which are the
+ * pre-adjustment numbers. DOT's own table says $1,075/$2,150.
+ */
+import Seo from '../components/Seo.astro';
+import Shell from '../components/Shell.astro';
+import { SITE } from '../data/site';
+
+const VERIFIED = '2026-07-17';
+const fmt = (d: string) =>
+  new Date(d).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const faq = [
+  {
+    q: 'Does the US require airlines to pay compensation for a delayed flight?',
+    a: 'No. There is no federal compensation mandate for delays or cancellations. The only situation where money is guaranteed is involuntary denied boarding on an oversold flight. Everything else an airline gives you after a delay — meals, hotels, vouchers — it gives voluntarily under its own customer service plan.',
+  },
+  {
+    q: 'What counts as a significant change that triggers a refund?',
+    a: 'A departure or arrival moving by more than three hours domestic or six hours international, a change of departure or arrival airport, an added connection, or a downgrade to a lower class of service. If you decline the alternative, the refund is automatic and must be in cash.',
+  },
+  {
+    q: 'Can an airline give me a voucher instead of a refund?',
+    a: 'Not unless you choose it. Since the 2024 rule, a voucher can only replace cash if you explicitly accept it. The airline must initiate the cash refund on its own, without you asking.',
+  },
+  {
+    q: 'How much is denied boarding compensation?',
+    a: 'Double the one-way fare for a one to two hour arrival delay, capped at 1,075 dollars, and four times the one-way fare beyond that, capped at 2,150 dollars. On international departures the four-times band starts at four hours instead of two.',
+  },
+  {
+    q: 'Does the refund right still apply if the delay was caused by weather?',
+    a: 'Yes. The refund obligation does not turn on whose fault the delay was. If the threshold is met and you decline rebooking, you are owed the money back regardless of cause. This is the opposite of EU261, where extraordinary circumstances remove the airline\'s liability.',
+  },
+];
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Your Rights as a US Airline Passenger',
+  datePublished: new Date('2026-07-17').toISOString(),
+  dateModified: new Date('2026-07-17').toISOString(),
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE.origin}/your-rights/` },
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.origin },
+  citation: [
+    {
+      '@type': 'WebPage',
+      name: 'US DOT — Bumping & Oversales',
+      url: 'https://www.transportation.gov/individuals/aviation-consumer-protection/bumping-oversales',
+    },
+    {
+      '@type': 'WebPage',
+      name: 'US DOT — Refunds final rule',
+      url: 'https://www.transportation.gov/briefing-room/biden-harris-administration-announces-final-rule-requiring-automatic-refunds-airline',
+    },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Seo
+      title="Your Rights as a US Airline Passenger"
+      description="What US airlines must give you when a flight breaks, what they merely offer, and the difference between the two. Federal rules only, checked against DOT's own pages."
+      published={new Date('2026-07-17')}
+      updated={new Date('2026-07-17')}
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(article)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </head>
+
+  <body>
+    <Shell section="rights">
+      <div class="rights">
+        <h1>Your rights as a US airline passenger</h1>
+
+        <div class="verdict">
+          <p class="verdict__label">The short version</p>
+          <p class="verdict__text">
+            US airlines must refund you in cash when they cancel or significantly
+            change your flight and you decline the alternative. They owe you
+            compensation on top of that in exactly one situation: being bumped
+            from an oversold flight. Everything else is the airline's choice.
+          </p>
+        </div>
+
+        <div class="meta">
+          <span>Updated {fmt(VERIFIED)}</span>
+          <span aria-hidden="true">·</span>
+          <span>Checked against DOT's published pages {fmt(VERIFIED)}</span>
+        </div>
+
+        <div class="prose">
+          <p>
+            The United States has no single passenger rights law. It has a set of
+            specific DOT rules covering specific situations, and outside those
+            situations the airline's own contract of carriage governs. That gap is
+            the single most misunderstood thing about flying in America, and airlines
+            are not in a hurry to explain it.
+          </p>
+
+          <h2>Refund and compensation are not the same word</h2>
+          <p>
+            A <strong>refund</strong> is your own money coming back because you didn't
+            get what you paid for. <strong>Compensation</strong> is an additional
+            payment for the disruption itself.
+          </p>
+          <p>
+            Nearly every country with functioning aviation regulation requires refunds.
+            Very few require compensation. The US requires refunds broadly and
+            compensation almost never — and conflating the two is how people end up
+            believing they're owed several hundred dollars for a delay when they are
+            owed nothing beyond their fare back.
+          </p>
+
+          <h2>When a refund is automatic</h2>
+          <p>
+            Since the DOT rule finalised in April 2024, airlines must issue a cash
+            refund to your original payment method, without you asking, when a flight
+            is cancelled or significantly changed and you decline what they offer
+            instead.
+          </p>
+
+          <div class="rule">
+            <p class="rule__label">Significant change, as DOT defines it</p>
+            <ul>
+              <li>Departure or arrival moves more than <strong>3 hours domestic</strong></li>
+              <li>Departure or arrival moves more than <strong>6 hours international</strong></li>
+              <li>Departure or arrival <strong>airport changes</strong></li>
+              <li>The itinerary <strong>adds a connection</strong></li>
+              <li>You are <strong>downgraded</strong> to a lower class of service</li>
+            </ul>
+            <p class="rule__note">
+              Refund timing: 7 business days for credit card, 20 days for other payment
+              methods. The airline cannot keep a processing fee.
+            </p>
+          </div>
+
+          <p>
+            Two things about this rule matter more than the thresholds themselves.
+          </p>
+          <p>
+            First, <strong>cause is irrelevant</strong>. Weather, air traffic control,
+            a mechanical fault — none of it changes the refund obligation. If the
+            threshold is met and you decline rebooking, the money comes back. This is
+            the reverse of EU261, where extraordinary circumstances release the airline.
+          </p>
+          <p>
+            Second, <strong>a voucher is not a substitute unless you say so</strong>.
+            Before 2024, airlines routinely defaulted to travel credit and most people
+            took it. That is no longer lawful. Credit can only replace cash if you
+            explicitly choose it, and you can decline.
+          </p>
+
+          <h2>The one thing that pays: being bumped</h2>
+          <p>
+            Involuntary denied boarding on an oversold flight is the only situation in
+            US aviation where federal law guarantees money on top of your fare. The
+            amount is set by DOT and keyed to your one-way fare and how late you arrive.
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <caption>Denied boarding compensation, departing a US airport</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Arrival delay</th>
+                  <th scope="col">Domestic</th>
+                  <th scope="col">International</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Under 1 hour</td>
+                  <td colspan="2">Nothing</td>
+                </tr>
+                <tr>
+                  <td>1–2 hours</td>
+                  <td><span class="num">200%</span> of one-way fare, capped at <span class="num">$1,075</span></td>
+                  <td rowspan="2" class="intl-note">
+                    1–4 hours: <span class="num">200%</span>, capped at <span class="num">$1,075</span><br />
+                    Over 4 hours: <span class="num">400%</span>, capped at <span class="num">$2,150</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Over 2 hours</td>
+                  <td><span class="num">400%</span> of one-way fare, capped at <span class="num">$2,150</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            You may see <span class="num">$775</span> and <span class="num">$1,550</span>
+            quoted elsewhere. Those are the previous caps. DOT adjusts them for
+            cost-of-living every two years, and its own table currently reads
+            <span class="num">$1,075</span> and <span class="num">$2,150</span>. It is a
+            good example of why a figure without a date attached is worth very little.
+          </p>
+          <p>
+            Payment is due <strong>at the airport, the same day</strong>. If your
+            replacement flight leaves first, the airline has 24 hours. And if they offer
+            a voucher, you can insist on a cheque.
+          </p>
+
+          <h3>When bumping pays nothing</h3>
+          <p>
+            The exclusions are wide enough that many people who feel bumped are owed
+            nothing:
+          </p>
+          <ul>
+            <li>A <strong>smaller aircraft</strong> was substituted for operational or safety reasons</li>
+            <li>Weight and balance limits on aircraft with 60 or fewer seats</li>
+            <li>Aircraft with <strong>fewer than 30 seats</strong></li>
+            <li>Charter flights</li>
+            <li><strong>Flights into the US from abroad</strong> — the rule only covers US departures</li>
+            <li>You were <strong>downgraded</strong> rather than denied boarding — that's a fare-difference refund instead</li>
+          </ul>
+          <p>
+            You also lose the right by missing the check-in deadline or arriving late at
+            the gate. Once a gate agent has scanned your boarding pass and told you to
+            board, though, you generally cannot be removed for overbooking at all.
+          </p>
+
+          <h2>Tarmac delays</h2>
+          <p>
+            You must be allowed off the aircraft after <strong>3 hours domestic</strong> or
+            <strong>4 hours international</strong>, unless leaving would create a safety or
+            security problem. Water and a snack are required within <strong>2 hours</strong>,
+            along with working lavatories and medical attention if needed.
+          </p>
+          <p>
+            There is no payment attached to any of this. The rule constrains the airline's
+            behaviour; it does not compensate you for the hours.
+          </p>
+
+          <h2>The 24-hour rule</h2>
+          <p>
+            Any ticket bought at least seven days before departure can be cancelled within
+            24 hours for a full refund, whatever the fare rules say. This covers basic
+            economy and every other non-refundable fare. Some airlines offer a 24-hour
+            hold instead of a refund; DOT permits either, but not neither.
+          </p>
+
+          <h2>What the rules quietly cost you</h2>
+          <p>
+            This is the part nobody advertises. Several carriers have treated the DOT
+            thresholds as a <em>new minimum</em> rather than a floor, and pulled back
+            policies that used to be more generous. A carrier that once refunded for a
+            two-hour delay can now point at the three-hour federal line and decline.
+          </p>
+          <p>
+            The rule genuinely strengthened the worst cases and quietly weakened some of
+            the middling ones. Both things are true.
+          </p>
+
+          <h2>What is still moving</h2>
+          <p>
+            DOT paused enforcement on one narrow piece of the refund rule: flights
+            cancelled and then re-operated on the same route under a different flight
+            number. Airlines argued the original wording made a renumbering into a
+            cancellation. That pause was set to run to <strong>30 June 2026</strong> while
+            the definition is redrafted — check the current position before relying on it.
+            Every other part of the rule remains in force.
+          </p>
+          <p>
+            DOT also proposed adding <strong>120-minute tarmac delays</strong> to the
+            automatic refund framework in March 2026. A separate fee-transparency rule
+            remains in litigation.
+          </p>
+
+          <h2>If the airline won't</h2>
+          <p>
+            Ask the airline first, in writing, and give them the 60 days they are allowed
+            to respond. If that fails, DOT's Office of Aviation Consumer Protection takes
+            complaints directly, and it does fine carriers — enforcement actions in the
+            hundreds of thousands of dollars against named airlines are a matter of public
+            record.
+          </p>
+
+          <h2>Frequently asked questions</h2>
+
+          {faq.map((f) => (
+            <>
+              <p><strong>{f.q}</strong></p>
+              <p>{f.a}</p>
+            </>
+          ))}
+        </div>
+
+        <section class="sources" aria-labelledby="sources-h">
+          <h2 id="sources-h">Sources</h2>
+          <ul>
+            <li>
+              <a href="https://www.transportation.gov/individuals/aviation-consumer-protection/bumping-oversales" rel="nofollow noopener" target="_blank">
+                US DOT — Bumping &amp; Oversales
+              </a>
+              <span class="sources__date">retrieved {fmt(VERIFIED)}</span>
+            </li>
+            <li>
+              <a href="https://www.transportation.gov/briefing-room/biden-harris-administration-announces-final-rule-requiring-automatic-refunds-airline" rel="nofollow noopener" target="_blank">
+                US DOT — Final rule requiring automatic refunds
+              </a>
+              <span class="sources__date">retrieved {fmt(VERIFIED)}</span>
+            </li>
+            <li>
+              <a href="https://www.transportation.gov/airconsumer/fly-rights" rel="nofollow noopener" target="_blank">
+                US DOT — Fly Rights
+              </a>
+              <span class="sources__date">retrieved {fmt(VERIFIED)}</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </Shell>
+
+    <style>
+      .rights h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 5vw, 2.5rem);
+        font-weight: 600;
+        line-height: 1.14;
+        letter-spacing: -0.025em;
+        color: var(--navy);
+        margin: 0 0 0.75rem;
+        max-width: 20ch;
+      }
+
+      .verdict {
+        border-left: 3px solid var(--amber);
+        padding: 0.1rem 0 0.1rem 1.1rem;
+        margin: 1.5rem 0;
+      }
+      .verdict__label {
+        font-family: var(--font-utility);
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--slate);
+        margin: 0 0 0.3rem;
+      }
+      .verdict__text {
+        font-size: 1.14rem;
+        line-height: 1.55;
+        color: var(--navy);
+        margin: 0;
+        max-width: 58ch;
+      }
+
+      .rights .prose { max-width: 62ch; }
+
+      /* Rule box: the thresholds are the operative facts on this page, so
+         they get lifted out of the prose rather than buried in it. */
+      .rule {
+        background: rgb(11 31 58 / 0.04);
+        border-radius: 2px;
+        padding: 1.1rem 1.35rem;
+        margin: 1.5rem 0;
+      }
+      .rule__label {
+        font-family: var(--font-utility);
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--slate);
+        margin: 0 0 0.6rem;
+      }
+      .rule ul { margin: 0; padding-left: 1.1rem; font-size: 0.95rem; line-height: 1.7; }
+      .rule li { margin-bottom: 0.2rem; }
+      .rule__note {
+        margin: 0.8rem 0 0;
+        padding-top: 0.7rem;
+        border-top: 0.5px solid var(--rule);
+        font-size: 0.85rem;
+        color: var(--slate);
+      }
+
+      .table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+      caption {
+        font-family: var(--font-utility);
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--slate);
+        text-align: left;
+        padding-bottom: 0.6rem;
+      }
+      th {
+        font-family: var(--font-utility);
+        font-size: 0.66rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--slate);
+        font-weight: 400;
+        text-align: left;
+        padding: 0.5rem 0.75rem 0.5rem 0;
+        border-bottom: 1px solid var(--navy);
+      }
+      td {
+        padding: 0.7rem 0.75rem 0.7rem 0;
+        border-bottom: 0.5px solid var(--rule-soft);
+        vertical-align: top;
+        line-height: 1.5;
+      }
+      .intl-note { font-size: 0.85rem; }
+
+      /* Money and percentages are data. Tabular figures so the caps line up. */
+      .num {
+        font-family: var(--font-utility);
+        font-variant-numeric: tabular-nums;
+        font-size: 0.92em;
+        color: var(--navy);
+        font-weight: 500;
+      }
+
+      .rights .prose ul { margin: 0 0 1.1rem; padding-left: 1.3rem; }
+      .rights .prose li { margin-bottom: 0.4rem; }
+
+      @media (max-width: 560px) {
+        .verdict__text { font-size: 1.05rem; }
+        table { font-size: 0.85rem; }
+      }
+    </style>
+  </body>
+</html>

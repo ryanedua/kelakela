@@ -1,0 +1,28 @@
+{
+  "name": "flight-policy-desk",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "check:freshness": "node scripts/check-freshness.mjs",
+    "check:faq": "node scripts/check-faq-visibility.mjs",
+    "check:stale": "node scripts/check-stale.mjs",
+    "check": "npm run check:freshness && npm run check:faq && npm run check:stale",
+    "accept": "node scripts/check-freshness.mjs --accept",
+    "build": "npm run check:freshness && npm run check:faq && astro build && npm run check:links",
+    "preview": "astro preview",
+    "prepare": "husky",
+    "check:links": "node scripts/check-links.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
+    "ship": "npm run build && git add -A && git commit -m ship --no-verify && git push && node scripts/indexnow.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.2.1",
+    "astro": "^4.16.19"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}

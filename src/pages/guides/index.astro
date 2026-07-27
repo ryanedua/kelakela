@@ -1,0 +1,160 @@
+---
+import { getCollection } from 'astro:content';
+import Seo from '../../components/Seo.astro';
+import Shell from '../../components/Shell.astro';
+
+const TOPIC_LABELS: Record<string, string> = {
+  baggage: 'Baggage',
+  booking: 'Booking',
+  'changes-cancellations': 'Changes',
+  refunds: 'Refunds',
+  'delays-compensation': 'Delays',
+  'check-in': 'Check-in',
+  seating: 'Seating',
+  loyalty: 'Loyalty',
+  'special-assistance': 'Special assistance',
+  pets: 'Pets',
+  international: 'International',
+};
+
+const guides = await getCollection('guides', ({ data }) => !data.draft && !data.noindex);
+
+// Group by topic. Empty topics never render — a category listing nothing is a
+// crawl trap and it tells the reader you have less than you do.
+const byTopic = new Map<string, typeof guides>();
+for (const g of guides) {
+  const list = byTopic.get(g.data.topic) ?? [];
+  list.push(g);
+  byTopic.set(g.data.topic, list);
+}
+for (const list of byTopic.values()) {
+  list.sort((a, b) => +b.data.updated - +a.data.updated);
+}
+
+const topics = [...byTopic.entries()].sort((a, b) => b[1].length - a[1].length);
+const newest = guides.reduce((max, g) => (+g.data.updated > +max ? g.data.updated : max), new Date(0));
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Seo
+      title="Flight Guides — Policies, Booking, and What Airlines Owe You"
+      description="Guides to airline policy questions the carriers answer badly: separate tickets, interline handoffs, change fees, and what happens when a connection breaks."
+      published={new Date('2026-07-01')}
+      updated={newest}
+    />
+  </head>
+  <body>
+    <Shell section="guides">
+      <div class="index">
+        <h1>Guides</h1>
+        <p class="lede">
+          The questions airlines answer badly, usually because the honest answer
+          involves a competitor or a rule they would rather you not read closely.
+        </p>
+
+        {topics.map(([topic, list]) => (
+          <section class="group">
+            <h2>
+              <a href={`/guides/${topic}/`}>{TOPIC_LABELS[topic]}</a>
+              <span class="group__count">{list.length}</span>
+            </h2>
+            <ul>
+              {list.map((g) => (
+                <li>
+                  <div class="entry">
+                    <a href={`/guides/${g.slug}/`}>{g.data.title}</a>
+                    <p class="entry__verdict">{g.data.verdict}</p>
+                  </div>
+                  <span class="entry__date">{fmt(g.data.updated)}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </Shell>
+
+    <style>
+      .index h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 5vw, 2.6rem);
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        color: var(--navy);
+        margin: 0 0 0.6rem;
+      }
+      .lede {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 54ch;
+        margin: 0 0 2.75rem;
+      }
+
+      .group { margin-bottom: 2.5rem; }
+      .group h2 {
+        font-family: var(--font-utility);
+        font-size: 0.66rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: var(--slate);
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        margin: 0 0 0.4rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 0.5px solid var(--rule);
+      }
+      .group h2 a { color: var(--navy); text-decoration: none; }
+      .group h2 a:hover { text-decoration: underline; }
+      /* The count is not decoration: it tells you whether a topic has depth. */
+      .group__count { color: var(--slate); }
+
+      .group ul { list-style: none; margin: 0; padding: 0; }
+      .group li {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1.25rem;
+        padding: 0.85rem 0;
+        border-bottom: 0.5px solid var(--rule-soft);
+      }
+      .group li:last-child { border-bottom: 0; }
+
+      .entry { min-width: 0; }
+      .entry a {
+        font-family: var(--font-display);
+        font-size: 1.02rem;
+        font-weight: 500;
+        color: var(--navy);
+        text-decoration: none;
+        line-height: 1.35;
+      }
+      .entry a:hover { text-decoration: underline; }
+      .entry__verdict {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        color: var(--slate);
+        margin: 0.3rem 0 0;
+        max-width: 62ch;
+      }
+      .entry__date {
+        font-family: var(--font-utility);
+        font-size: 0.66rem;
+        color: var(--slate);
+        white-space: nowrap;
+      }
+
+      @media (max-width: 560px) {
+        .group li { flex-direction: column; gap: 0.35rem; }
+      }
+    </style>
+  </body>
+</html>

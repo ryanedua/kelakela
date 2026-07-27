@@ -1,0 +1,26 @@
+{
+  "slug": "southwest",
+  "name": "Southwest Airlines",
+  "iata": "WN",
+  "officialSite": "https://www.southwest.com",
+  "note": "Southwest's help-centre baggage page states the size and weight limits but routes fees to a separate travel-fees page. Only the limits are recorded here. Southwest ended bags-fly-free in 2025 and rebuilt its fare structure in January 2026, so a great deal of published material about this carrier describes a policy that no longer exists — which is exactly why the fee is left blank rather than guessed.",
+
+  "baggage": {
+    "label": "Checked bag limits",
+    "verified": "2026-07-17",
+    "sourceUrl": "https://support.southwest.com/helpcenter/s/article/checked-baggage-policy",
+    "policyEffective": null,
+    "rows": [
+      { "item": "Max weight per bag", "value": "50", "unit": "lb" },
+      { "item": "Max linear dimensions", "value": "62", "unit": "in" }
+    ],
+    "caveats": [
+      "Southwest's baggage policy page states limits but not fees. It links to a separate travel-fees page for the amounts, which we have not read, so no fee is printed here.",
+      "Checked bag fees apply. The long-standing bags-fly-free policy ended in 2025.",
+      "Bags can be checked digitally from 24 hours before departure once you have checked in, or at an airport kiosk or counter.",
+      "If your bag is overweight or oversized and you pay at the airport, Southwest requires a physical credit card. Contactless, tap-to-pay and mobile payments are refused for these fees.",
+      "Baggage embargoes apply to some countries, restricting oversized, overweight and extra checked bags.",
+      "On a partner itinerary, the operating carrier's baggage policy may apply instead of Southwest's."
+    ]
+  }
+}

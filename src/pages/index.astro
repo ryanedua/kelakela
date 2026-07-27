@@ -1,0 +1,281 @@
+---
+import { getCollection } from 'astro:content';
+import Seo from '../components/Seo.astro';
+import Shell from '../components/Shell.astro';
+import { SITE } from '../data/site';
+import { verifiedBlocks, parseVerified } from '../data/verified';
+
+const guides = await getCollection('guides', ({ data }) => !data.draft && !data.noindex);
+guides.sort((a, b) => +b.data.updated - +a.data.updated);
+
+const policies = await getCollection('policies', ({ data }) => !data.draft && !data.noindex);
+
+const files = import.meta.glob<Record<string, any>>('../data/airlines/*.json', { eager: true });
+const airlines = Object.values(files).map((m: any) => m.default ?? m);
+
+
+
+/** A data block only earns a link if a policy page actually renders it.
+ *  The JSON can legitimately hold data ahead of the page being written — that's
+ *  the point of separating them — but linking to a page that doesn't exist is
+ *  a 404 in the nav, and those are the ones that bite silently. */
+const pageExists = new Set(policies.map((p) => `${p.data.airline}/${p.data.topic}`));
+
+/**
+ * The hero is the freshness board, not a headline.
+ *
+ * The most characteristic thing about this site is that it tells you when it
+ * last checked. So the front page opens by doing exactly that, in the
+ * vernacular of the thing it covers: a departure board. Every row is checkable
+ * and some of them are amber — which is the point. A board showing only green
+ * would be a board nobody had to trust.
+ */
+const board = airlines
+  .flatMap((a) =>
+    verifiedBlocks(a).map(([key, b]: [string, any]) => {
+      const topic = key === 'changesCancellations' ? 'changes-cancellations' : key;
+      const verified = parseVerified(b.verified)!;
+      return {
+        airline: a.name,
+        slug: a.slug,
+        topic,
+        label: b.label,
+        verified: b.verified as string,
+        age: Math.floor((Date.now() - verified.getTime()) / 86_400_000),
+        href: pageExists.has(`${a.slug}/${topic}`) ? `/airlines/${a.slug}/${topic}/` : null,
+      };
+    })
+  )
+  .sort((x, y) => y.age - x.age);
+
+const fmtShort = (d: string) =>
+  new Date(d).toLocaleDateString('en-US', { day: '2-digit', month: 'short' }).toUpperCase();
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+
+// "Site last touched" = the most recent `updated` across everything published.
+// This is honest to automate: publish anything and it moves, because something
+// genuinely changed. It is NOT the same as the per-airline "last checked" dates
+// on the board below — those track when each fee was verified against source,
+// and must never move just because an unrelated article shipped.
+const allUpdated = [
+  ...guides.map((g) => g.data.updated),
+  ...policies.map((p) => p.data.updated),
+].sort((a, b) => +new Date(b) - +new Date(a));
+
+const newest = allUpdated.length ? allUpdated[0] : new Date();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Seo
+      title="Flight Policy Desk — Airline Rules, Checked and Dated"
+      description="Airline baggage fees, change rules, and passenger rights for six US carriers. Every figure shows the date we last checked it against the airline's own page."
+      published={new Date('2026-07-01')}
+      updated={newest}
+    />
+  </head>
+  <body>
+    <Shell section={null}>
+      <div class="home">
+        <h1>{SITE.tagline}</h1>
+
+        <p class="lede">
+          Airline fees move and the pages that quote them mostly don't. Everything
+          here carries the date it was last read off the carrier's own site — including
+          the rows we're overdue on.
+        </p>
+
+        {board.length > 0 && (
+          <section class="board" aria-labelledby="board-h">
+            <h2 id="board-h">Last checked</h2>
+            <ul>
+              {board.map((r) => (
+                <li>
+                  {r.href ? (
+                    <a href={r.href}>
+                      <span class="board__airline">{r.airline}</span>
+                      <span class="board__topic">{r.label}</span>
+                    </a>
+                  ) : (
+                    <span class="board__unlinked">
+                      <span class="board__airline">{r.airline}</span>
+                      <span class="board__topic">{r.label}</span>
+                    </span>
+                  )}
+                  <span class={`board__date board__date--${r.age > 180 ? 'crit' : r.age > 90 ? 'warn' : 'ok'}`}>
+                    {fmtShort(r.verified)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {guides.length > 0 && (
+          <section class="latest" aria-labelledby="latest-h">
+            <h2 id="latest-h">Guides</h2>
+            <ul>
+              {guides.slice(0, 6).map((g) => (
+                <li>
+                  <div>
+                    <a href={`/guides/${g.slug}/`}>{g.data.title}</a>
+                    <p>{g.data.verdict}</p>
+                  </div>
+                  <span class="latest__date">{fmt(g.data.updated)}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="more"><a href="/guides/">All guides</a></p>
+          </section>
+        )}
+
+        <p class="site-updated">Site last updated {fmt(new Date(newest))}</p>
+      </div>
+    </Shell>
+
+    <style>
+      .home h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 5.5vw, 2.8rem);
+        font-weight: 600;
+        line-height: 1.12;
+        letter-spacing: -0.03em;
+        color: var(--navy);
+        margin: 0 0 0.8rem;
+        max-width: 18ch;
+      }
+      .lede {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 56ch;
+        margin: 0 0 2.5rem;
+      }
+
+      /* Departure board. The site's thesis, rendered in the subject's own idiom. */
+      .board {
+        background: var(--navy);
+        border-radius: 2px;
+        padding: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      .board h2 {
+        font-family: var(--font-utility);
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: var(--amber);
+        margin: 0 0 0.9rem;
+      }
+      .board ul { list-style: none; margin: 0; padding: 0; }
+      .board li {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        padding: 0.6rem 0;
+        border-bottom: 1px solid rgb(247 245 240 / 0.12);
+      }
+      .board li:last-child { border-bottom: 0; }
+      .board a,
+      .board__unlinked {
+        text-decoration: none;
+        display: flex;
+        gap: 0.75rem;
+        align-items: baseline;
+        min-width: 0;
+      }
+      .board a:hover .board__topic { color: var(--paper); }
+      .board__airline {
+        font-size: 0.92rem;
+        color: var(--paper);
+        white-space: nowrap;
+      }
+      .board__topic {
+        font-size: 0.82rem;
+        color: var(--slate);
+      }
+      .board__date {
+        font-family: var(--font-utility);
+        font-variant-numeric: tabular-nums;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+      }
+      .board__date--ok { color: var(--amber); }
+      .board__date--warn { color: #f0a020; }
+      .board__date--crit { color: var(--red); }
+
+      .latest h2 {
+        font-family: var(--font-utility);
+        font-size: 0.66rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: var(--slate);
+        margin: 0 0 0.5rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 0.5px solid var(--rule);
+      }
+      .latest ul { list-style: none; margin: 0; padding: 0; }
+      .latest li {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1.25rem;
+        padding: 0.85rem 0;
+        border-bottom: 0.5px solid var(--rule-soft);
+      }
+      .latest li > div { min-width: 0; }
+      .latest a {
+        font-family: var(--font-display);
+        font-size: 1.02rem;
+        font-weight: 500;
+        color: var(--navy);
+        text-decoration: none;
+        line-height: 1.35;
+      }
+      .latest a:hover { text-decoration: underline; }
+      .latest p {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        color: var(--slate);
+        margin: 0.3rem 0 0;
+        max-width: 62ch;
+      }
+      .site-updated {
+        margin-top: 3rem;
+        padding-top: 1.2rem;
+        border-top: 0.5px solid var(--rule);
+        font-family: var(--font-utility);
+        font-size: 0.66rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--slate);
+      }
+      .latest__date {
+        font-family: var(--font-utility);
+        font-size: 0.66rem;
+        color: var(--slate);
+        white-space: nowrap;
+      }
+      .more {
+        margin: 1.25rem 0 0;
+        font-family: var(--font-utility);
+        font-size: 0.7rem;
+      }
+      .more a { color: var(--navy); }
+
+      @media (max-width: 560px) {
+        .board { padding: 1.15rem; }
+        .board a, .board__unlinked { flex-direction: column; gap: 0.1rem; }
+        .latest li { flex-direction: column; gap: 0.35rem; }
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+# Everything here is meant to be indexed. The two exceptions below are not
+# content — they're the CMS mount and Netlify's internal paths.
+
+User-agent: *
+Allow: /
+
+# Sveltia's admin panel. It's behind GitHub OAuth so nobody can edit anything,
+# but the page itself is a JS shell with no content — indexing it would put an
+# empty result in the SERP under the site's own name.
+Disallow: /admin/
+
+# Netlify internals. Never useful, occasionally crawled.
+Disallow: /.netlify/
+
+Sitemap: https://sarinlab.stanford.edu/sitemap-index.xml

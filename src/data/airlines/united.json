@@ -1,0 +1,29 @@
+{
+  "slug": "united",
+  "name": "United Airlines",
+  "iata": "UA",
+  "officialSite": "https://www.united.com",
+  "note": "United does not publish a standard checked bag fee. Its page routes you to a calculator that requires a route and a purchase date. The figures below are the ones United states outright: size, weight, and the Basic Economy carry-on charge. First and second bag fees are deliberately absent because United does not print them.",
+
+  "baggage": {
+    "label": "Checked bag limits",
+    "verified": "2026-07-17",
+    "sourceUrl": "https://www.united.com/en/us/fly/baggage/checked-bags.html",
+    "policyEffective": "2026-04-03",
+    "rows": [
+      { "item": "Max weight, Economy and Premium Economy", "value": "50", "unit": "lb" },
+      { "item": "Max weight, Business, First, Polaris", "value": "70", "unit": "lb" },
+      { "item": "Max linear dimensions", "value": "62", "unit": "in" },
+      { "item": "Basic Economy carry-on, at lobby", "value": "50", "unit": "USD" },
+      { "item": "Basic Economy carry-on, at gate", "value": "75", "unit": "USD" }
+    ],
+    "caveats": [
+      "United does not publish a flat first or second checked bag fee. Its page sends you to a calculator that needs your route and your ticket purchase date.",
+      "Fees rose for tickets purchased on or after 3 April 2026 on domestic, US-Latin America short-haul, US-Canada, Caribbean and Mexico routes.",
+      "Fees rose again for tickets purchased on or after 12 May 2026 on many US routes to Africa, Asia, Europe and South America.",
+      "Basic Economy includes a personal item only, no carry-on. A carry-on must be checked: 50 USD at the lobby, 75 USD at the gate, for tickets bought on or after 3 April 2026. Tickets bought before that date pay 40 and 65.",
+      "The weight limit follows whichever is higher, your cabin or your MileagePlus status. Premier Silver and above get 70 lb in any cabin. Star Alliance Gold gets 70 lb in Business but 50 lb in Economy.",
+      "Maximum size is 30 x 20 x 12 inches, or 62 inches total including handles and wheels."
+    ]
+  }
+}

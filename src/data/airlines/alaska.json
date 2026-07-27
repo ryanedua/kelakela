@@ -1,0 +1,37 @@
+{
+  "slug": "alaska",
+  "name": "Alaska Airlines",
+  "iata": "AS",
+  "officialSite": "https://www.alaskaair.com",
+  "note": "Post-Hawaiian merger. Fee schedule is keyed to TICKETING date, not travel date — the current North America table applies to flights ticketed on or after 2026-04-10, and Alaska still publishes two older tables for tickets issued before then. Loyalty is now Atmos Rewards. Fees also vary by region: intra-Hawaii is cheaper than the rest of North America, and several international routes carry a free first bag.",
+
+  "baggage": {
+    "label": "Checked bags, North America",
+    "verified": "2026-07-17",
+    "sourceUrl": "https://www.alaskaair.com/content/travel-info/baggage/checked-bags",
+    "policyEffective": "2026-04-10",
+    "rows": [
+      { "item": "First checked bag", "value": "45", "unit": "USD" },
+      { "item": "Second checked bag", "value": "55", "unit": "USD" },
+      { "item": "Max weight per bag", "value": "50", "unit": "lb" },
+      { "item": "Max linear dimensions", "value": "62", "unit": "in" }
+    ],
+    "caveats": [
+      "Main Cabin and Saver fares, travel within North America (including Central America and Hawaii). Fees are per direction.",
+      "Intra-Hawaii is cheaper: 30 USD first bag, 40 USD second.",
+      "The schedule is keyed to when the ticket was ISSUED, not when you fly. These figures apply to tickets issued on or after 10 April 2026; Alaska publishes separate tables for earlier tickets.",
+      "Free first bag for Atmos Rewards status holders and Atmos Rewards Visa cardholders when the fare is purchased with the card. Business and First include two bags at 70 lb.",
+      "Alaska or Hawaiian flight numbers can still fall under a partner's baggage rules. Codeshare flights in several number ranges (Qantas, British Airways, American, Japan Airlines and others) are governed by the operating carrier's policy, not this table.",
+      "Separate tickets are separate journeys. Bags are only checked to the final destination of the first ticket, and each carrier's fees apply again."
+    ]
+  },
+
+  "cabins2026": [
+    "Saver",
+    "Main",
+    "Premium Class",
+    "First Class",
+    "Hawaiian Airlines Extra Comfort",
+    "Hawaiian Airlines Leihoku Suites"
+  ]
+}

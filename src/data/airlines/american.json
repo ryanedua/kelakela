@@ -1,0 +1,30 @@
+{
+  "slug": "american",
+  "name": "American Airlines",
+  "iata": "AA",
+  "officialSite": "https://www.aa.com",
+  "note": "American charges 5 USD less if you pay online rather than at the airport, and 5 USD more if you are on a Basic Economy ticket. The figures below are the standard online price. Weight and size limits are behind a collapsed section on American's page and are not recorded here because they were not stated in the source.",
+
+  "baggage": {
+    "label": "Checked bags, US and nearby",
+    "verified": "2026-07-17",
+    "sourceUrl": "https://www.aa.com/i18n/travel-info/baggage/checked-baggage-policy.jsp",
+    "policyEffective": "2026-05-18",
+    "rows": [
+      { "item": "First checked bag, paid online", "value": "45", "unit": "USD" },
+      { "item": "First checked bag, paid at airport", "value": "50", "unit": "USD" },
+      { "item": "Second checked bag, paid online", "value": "55", "unit": "USD" },
+      { "item": "Second checked bag, paid at airport", "value": "60", "unit": "USD" }
+    ],
+    "caveats": [
+      "Travel within or between the US, Puerto Rico, US Virgin Islands, Canada, the Caribbean (except Cuba and Haiti), Mexico, Central America (except Panama) and Guyana.",
+      "Basic Economy pays 5 USD more for both the first and second bag.",
+      "Paying online saves 5 USD per bag against paying at the airport.",
+      "Fees are per person and per direction of travel.",
+      "Bag fees paid at the airport are non-refundable. If you pay for bags and later receive an upgrade that includes free bags, the fee you already paid is not refunded.",
+      "These allowances and fees were updated on 18 May 2026.",
+      "Up to 10 bags on American-operated domestic, trans-Atlantic and trans-Pacific flights; up to 5 to or through Mexico, the Caribbean, Central America, South America and Brazil.",
+      "Cuba is capped at 2 checked bags at 70 lb each, and since 26 August 2025 even Executive Platinum, Platinum Pro and oneworld Emerald members are limited to 2 free bags on Cuba routes."
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+# Build the site and publish it to GitHub Pages.
+#
+# This runs the SAME `npm run build` Netlify runs — which means the same
+# validators (freshness, FAQ visibility, links). A build that would fail on
+# Netlify fails here too, before anything is published. That is the point:
+# the guardrails don't care which host runs them.
+#
+# Trigger: every push to main, plus a manual button in the Actions tab.
+
+name: Deploy to GitHub Pages
+
+"on":
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Pages needs these permissions to publish.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; a newer push cancels an in-flight one.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # The real build, guardrails and all. If check:freshness, check:faq,
+      # or check:links fails, the deploy stops here — exactly like Netlify.
+      - run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

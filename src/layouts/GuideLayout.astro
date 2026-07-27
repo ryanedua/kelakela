@@ -1,0 +1,243 @@
+---
+/**
+ * Guide layout — narrative-first.
+ *
+ * Deliberately NOT the policy layout. A policy page is a data card wrapped in
+ * thin prose; a guide is the inverse. The differences that matter:
+ *
+ *   - verdict block up top: the answer, before the argument
+ *   - table of contents: guides run long, and people scan before they read
+ *   - sources rendered visibly, not just in schema markup
+ *   - no PolicyData card unless the guide actually cites airline figures
+ */
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Seo from '../components/Seo.astro';
+import Shell from '../components/Shell.astro';
+import { SITE } from '../data/site';
+
+interface Props {
+  entry: CollectionEntry<'guides'>;
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { entry, headings } = Astro.props;
+const d = entry.data;
+
+const TOPIC_LABELS: Record<string, string> = {
+  baggage: 'Baggage',
+  booking: 'Booking',
+  'changes-cancellations': 'Changes',
+  refunds: 'Refunds',
+  'delays-compensation': 'Delays',
+  'check-in': 'Check-in',
+  seating: 'Seating',
+  loyalty: 'Loyalty',
+  'special-assistance': 'Special assistance',
+  pets: 'Pets',
+  international: 'International',
+};
+
+const AIRLINE_LABELS: Record<string, string> = {
+  delta: 'Delta',
+  united: 'United',
+  american: 'American',
+  alaska: 'Alaska',
+  jetblue: 'JetBlue',
+  southwest: 'Southwest',
+};
+
+// h2 only. Guides that need h3 in the TOC are guides that need splitting.
+const toc = headings.filter((h) => h.depth === 2);
+
+const fmt = (dt: Date) =>
+  dt.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+
+const allGuides = await getCollection('guides', ({ data }) => !data.draft);
+const related = allGuides
+  .filter((g) => g.slug !== entry.slug && g.data.topic === d.topic)
+  .slice(0, 4);
+
+// Breadcrumbs are the one bit of schema a guide reliably earns in the SERP.
+const breadcrumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Guides', item: `${SITE.origin}/guides/` },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: TOPIC_LABELS[d.topic],
+      item: `${SITE.origin}/guides/${d.topic}/`,
+    },
+    { '@type': 'ListItem', position: 3, name: d.title },
+  ],
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Seo
+      title={d.title}
+      description={d.description}
+      published={d.published}
+      updated={d.updated}
+      canonical={d.canonical}
+      noindex={d.noindex}
+      isHowTo={d.isHowTo}
+      faq={d.faq}
+      sources={d.sources}
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+  </head>
+
+  <body>
+    <Shell section="guides">
+      <article class="guide">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="/guides/">Guides</a>
+          <span aria-hidden="true">/</span>
+          <a href={`/guides/${d.topic}/`}>{TOPIC_LABELS[d.topic]}</a>
+        </nav>
+
+        <h1>{d.heading ?? d.title}</h1>
+
+        {d.airlines.length > 0 && (
+          <p class="applies">
+            Applies to {d.airlines.map((a) => AIRLINE_LABELS[a]).join(', ')}
+          </p>
+        )}
+
+        {/* The answer, before the argument. */}
+        <div class="verdict">
+          <p class="verdict__label">Short answer</p>
+          <p class="verdict__text">{d.verdict}</p>
+        </div>
+
+        <div class="meta">
+          <span>Updated {fmt(d.updated)}</span>
+          {d.verifiedAgainstSource && (
+            <>
+              <span aria-hidden="true">·</span>
+              <span>Checked against source {fmt(d.verifiedAgainstSource)}</span>
+            </>
+          )}
+        </div>
+
+        {toc.length > 2 && (
+          <nav class="toc" aria-label="On this page">
+            <p class="toc__label">On this page</p>
+            <ol>
+              {toc.map((h) => (
+                <li><a href={`#${h.slug}`}>{h.text}</a></li>
+              ))}
+            </ol>
+          </nav>
+        )}
+
+        <div class="prose">
+          <slot />
+        </div>
+
+        {d.sources.length > 0 && (
+          <section class="sources" aria-labelledby="sources-h">
+            <h2 id="sources-h">Sources</h2>
+            <ul>
+              {d.sources.map((s) => (
+                <li>
+                  <a href={s.url} rel="nofollow noopener" target="_blank">{s.label}</a>
+                  <span class="sources__date">retrieved {fmt(s.retrieved)}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </article>
+
+      {related.length > 0 && (
+        <aside class="related" aria-labelledby="related-h">
+          <h2 id="related-h">More on {TOPIC_LABELS[d.topic].toLowerCase()}</h2>
+          <ul>
+            {related.map((g) => (
+              <li>
+                <a href={`/guides/${g.slug}/`}>{g.data.title}</a>
+                <span class="related__date">{fmt(g.data.updated)}</span>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
+    </Shell>
+
+    <style>
+      .guide h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.75rem, 4.5vw, 2.4rem);
+        font-weight: 600;
+        line-height: 1.14;
+        letter-spacing: -0.02em;
+        color: var(--navy);
+        margin: 0 0 0.75rem;
+        max-width: 22ch;
+      }
+
+      .applies {
+        font-family: var(--font-utility);
+        font-size: 0.72rem;
+        color: var(--slate);
+        margin: 0 0 1.1rem;
+      }
+
+      /* The one loud element on a guide. Everything around it stays quiet. */
+      .verdict {
+        border-left: 3px solid var(--amber);
+        border-radius: 0;
+        padding: 0.1rem 0 0.1rem 1.1rem;
+        margin: 1.5rem 0;
+      }
+      .verdict__label {
+        font-family: var(--font-utility);
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--slate);
+        margin: 0 0 0.3rem;
+      }
+      .verdict__text {
+        font-size: 1.18rem;
+        line-height: 1.55;
+        color: var(--navy);
+        margin: 0;
+      }
+
+      .toc {
+        background: rgb(11 31 58 / 0.04);
+        border-radius: 2px;
+        padding: 1rem 1.25rem;
+        margin-bottom: 2rem;
+      }
+      .toc__label {
+        font-family: var(--font-utility);
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--slate);
+        margin: 0 0 0.5rem;
+      }
+      .toc ol {
+        margin: 0;
+        padding-left: 1.1rem;
+        font-size: 0.92rem;
+        line-height: 1.75;
+      }
+      .toc a { color: var(--navy); text-decoration: none; }
+      .toc a:hover { text-decoration: underline; }
+
+      @media (max-width: 640px) {
+        .verdict__text { font-size: 1.08rem; }
+      }
+    </style>
+  </body>
+</html>

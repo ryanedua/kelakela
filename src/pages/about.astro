@@ -1,0 +1,166 @@
+---
+/**
+ * /about/ — who is behind the figures.
+ *
+ * /method/ explains how the checking works. This explains who does it, and
+ * it is deliberately plain about scale and location. A site that hands people
+ * numbers they'll spend money on has to be reachable and honest about what it
+ * is. Overstating either would undo the thing the whole site is built on.
+ */
+import Seo from '../components/Seo.astro';
+import Shell from '../components/Shell.astro';
+import { SITE } from '../data/site';
+
+const UPDATED = '2026-07-17';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: `About ${SITE.name}`,
+  url: `${SITE.origin}/about/`,
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.origin,
+    email: 'cs@farehal.com',
+    founder: { '@type': 'Person', name: 'Ryan' },
+  },
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Seo
+      title="About Flight Policy Desk"
+      description="Who checks the figures on this site, from where, and how to reach them. One person, six airlines, no affiliation with any of them and no commission."
+      published={new Date('2026-07-17')}
+      updated={new Date(UPDATED)}
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+
+  <body>
+    <Shell section={null}>
+      <div class="about">
+        <h1>About</h1>
+
+        <p class="lede">
+          This site is run by one person. My name is Ryan, I'm in USA, and
+          I write for people flying in the United States.
+        </p>
+
+        <div class="prose">
+          <h2>Why it exists</h2>
+          <p>
+            Airline policy changes constantly and the pages that explain it mostly
+            don't. A baggage fee gets quoted in an article, the fee moves, and the
+            article stays up — ranking, confident, wrong. Multiply that by six
+            carriers and a decade and you get the situation now: search for a bag
+            fee and you'll find a dozen answers, several of them stale, none of them
+            dated.
+          </p>
+          <p>
+            So this site does one thing that sounds trivial and turns out to be the
+            whole point. Every figure carries the date it was read off the airline's
+            own page, and a link to that page. If it's old, it says so, in red, on
+            the page you're reading.
+          </p>
+
+          <h2>Where I'm writing from</h2>
+          <p>
+            usa. The site is written in English for US travellers, and I want
+            that stated rather than implied.
+          </p>
+          <p>
+            Airline policy is a public document. Anyone who reads English, opens the
+            carrier's own page, and writes down what it actually says can do this
+            accurately — and anyone who skips that step gets it wrong regardless of
+            where they sit. What decides whether a figure on this site is right is
+            whether I read it from the source and stamped it with the date I read it.
+            That's checkable from anywhere, including by you.
+          </p>
+          <p>
+            What I can't offer is first-hand experience of a US airport counter.
+            Where a rule has a lived texture the published policy doesn't capture,
+            I'd rather you knew who was telling you.
+          </p>
+
+          <h2>The scale, plainly</h2>
+          <p>
+            Six airlines. A handful of guides. One person checking, by hand, opening
+            each carrier's page and typing what it says.
+          </p>
+          <p>
+            That's small, and I'd rather say so than dress it up as an editorial team.
+            It's also the reason the dates on this site mean something: there is no
+            pipeline scraping figures and no queue of drafts going stale. When a page
+            says <em>checked 17 July</em>, someone opened the airline's page on 17 July.
+          </p>
+
+          <h2>No affiliation, no commission</h2>
+          <p>
+            I'm not affiliated with Alaska, American, Delta, JetBlue, Southwest,
+            United, or any other airline. I don't take commission. Nothing on this
+            site is a booking link and no carrier pays to appear here or to appear
+            favourably.
+          </p>
+          <p>
+            If that changes, it gets written on this page before it appears anywhere
+            else on the site.
+          </p>
+
+          <h2>When the airline and I disagree</h2>
+          <p>
+            They're right and I'm out of date. The link to check is on every data
+            card, and using it is the correct response — that's what it's there for.
+          </p>
+          <p>
+            If you find something wrong, tell me:
+            <a href="mailto:cs@farehal.com">cs@farehal.com</a>. A correction is
+            worth more to this site than a new page.
+          </p>
+
+          <h2>More</h2>
+          <p>
+            <a href="/method/">How we check</a> covers the mechanics: where the
+            numbers come from, what the three different dates mean, and what
+            happens when a figure goes unchecked too long.
+          </p>
+        </div>
+
+        <p class="stamp">Last updated 17 July 2026</p>
+      </div>
+    </Shell>
+
+    <style>
+      .about h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 5vw, 2.5rem);
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        color: var(--navy);
+        margin: 0 0 0.7rem;
+      }
+      .lede {
+        font-size: 1.12rem;
+        line-height: 1.6;
+        max-width: 54ch;
+        margin: 0 0 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 0.5px solid var(--rule);
+      }
+      .about .prose { max-width: 62ch; }
+      .stamp {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 0.5px solid var(--rule);
+        font-family: var(--font-utility);
+        font-size: 0.68rem;
+        color: var(--slate);
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+---
+/**
+ * Base shell: masthead, footer, and the global type/colour system.
+ *
+ * Extracted so GuideLayout and PolicyLayout can't drift apart. The two page
+ * types differ in body structure, not chrome — keeping the chrome in one file
+ * is what stops "the nav on policy pages looks slightly off" from happening
+ * six months from now.
+ */
+import { SITE } from '../data/site';
+
+interface Props {
+  section?: 'guides' | 'airlines' | 'rights' | 'method' | null;
+}
+
+const { section = null } = Astro.props;
+---
+
+<a href="#main" class="skip">Skip to content</a>
+
+<header class="masthead">
+  <a href="/" class="wordmark" aria-label={`${SITE.name} — home`}>
+    <svg class="mark" viewBox="0 0 46 46" aria-hidden="true" focusable="false">
+      <rect x="2" y="2" width="42" height="42" rx="2" fill="none" stroke="currentColor" stroke-width="3"/>
+      <rect x="2" y="2" width="42" height="12" fill="currentColor"/>
+      <rect x="9" y="23" width="28" height="3" fill="currentColor"/>
+      <rect x="9" y="31" width="19" height="3" fill="currentColor"/>
+    </svg>
+    <span>{SITE.name}</span>
+  </a>
+  <nav aria-label="Main">
+    <a href="/guides/" aria-current={section === 'guides' ? 'page' : undefined}>Guides</a>
+    <a href="/airlines/" aria-current={section === 'airlines' ? 'page' : undefined}>Airlines</a>
+    <a href="/your-rights/" aria-current={section === 'rights' ? 'page' : undefined}>Your rights</a>
+    <a href="/method/" aria-current={section === 'method' ? 'page' : undefined}>Method</a>
+  </nav>
+</header>
+
+<main id="main">
+  <slot />
+</main>
+
+<footer class="foot">
+  <p>{SITE.tagline}</p>
+  <nav aria-label="Footer">
+    <a href="/method/">How we check</a>
+    <a href="/about/">About</a>
+  </nav>
+</footer>
+
+<style is:global>
+  :root {
+    /* Gate signage, not the default cream-and-terracotta. */
+    --navy: #0b1f3a;
+    --paper: #f7f5f0;
+    --amber: #e8b33d;
+    --red: #c4403a;
+    --green: #1a6b54;
+    --slate: #7a8fa6;
+    --ink: #33414f;
+    --rule: #c9c6be;
+    --rule-soft: #e0ddd5;
+
+    --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --font-utility: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--navy);
+    color: var(--paper);
+    padding: 0.75rem 1rem;
+    z-index: 10;
+  }
+  .skip:focus { left: 0; }
+
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+  .masthead {
+    background: var(--navy);
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .wordmark {
+    font-family: var(--font-utility);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  /* currentColor throughout, so the mark inherits the amber from .wordmark
+     and needs no separate colour rule. */
+  .mark {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .masthead nav { display: flex; gap: 1.15rem; }
+  .masthead nav a {
+    font-family: var(--font-utility);
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate);
+    text-decoration: none;
+    padding-bottom: 2px;
+  }
+  .masthead nav a:hover { color: var(--paper); }
+  .masthead nav a[aria-current='page'] {
+    color: var(--paper);
+    border-bottom: 1px solid var(--amber);
+  }
+
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+  .crumbs {
+    font-family: var(--font-utility);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 0.9rem;
+  }
+  .crumbs a { color: var(--slate); text-decoration: none; }
+  .crumbs a:hover { color: var(--navy); }
+  .crumbs span { margin: 0 0.4rem; }
+
+  .meta {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    font-family: var(--font-utility);
+    font-size: 0.68rem;
+    color: var(--slate);
+    border-top: 0.5px solid var(--rule);
+    border-bottom: 0.5px solid var(--rule);
+    padding: 0.55rem 0;
+    margin-bottom: 1.75rem;
+  }
+
+  .prose h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    margin: 2.5rem 0 0.75rem;
+    scroll-margin-top: 1.5rem;
+  }
+  .prose h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 1.75rem 0 0.5rem;
+  }
+  .prose p { margin: 0 0 1.1rem; }
+  .prose strong { font-weight: 600; color: var(--navy); }
+  .prose a { color: var(--navy); text-underline-offset: 2px; }
+  .prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.3rem; }
+  .prose li { margin-bottom: 0.4rem; }
+
+  .sources {
+    margin-top: 3rem;
+    border-top: 0.5px solid var(--rule);
+    padding-top: 1.25rem;
+  }
+  .sources h2,
+  .related h2 {
+    font-family: var(--font-utility);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--slate);
+    font-weight: 400;
+    margin: 0 0 0.75rem;
+  }
+  .sources ul { list-style: none; margin: 0; padding: 0; }
+  .sources li {
+    font-size: 0.88rem;
+    margin-bottom: 0.55rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+  .sources a { color: var(--navy); }
+  .sources__date {
+    font-family: var(--font-utility);
+    font-size: 0.68rem;
+    color: var(--slate);
+  }
+
+  .related { margin-top: 3.5rem; }
+  .related ul { list-style: none; margin: 0; padding: 0; }
+  .related li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-bottom: 0.5px solid var(--rule-soft);
+  }
+  .related a { color: var(--navy); text-decoration: none; font-size: 0.95rem; }
+  .related a:hover { text-decoration: underline; }
+  .related__date {
+    font-family: var(--font-utility);
+    font-size: 0.66rem;
+    color: var(--slate);
+    white-space: nowrap;
+  }
+
+  .foot {
+    border-top: 0.5px solid var(--rule);
+    padding: 2rem 1.5rem;
+    max-width: 46rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-family: var(--font-utility);
+    font-size: 0.68rem;
+    color: var(--slate);
+  }
+  .foot p { margin: 0; }
+  .foot nav { display: flex; gap: 1rem; }
+  .foot a { color: var(--slate); }
+
+  @media (max-width: 640px) {
+    main { padding: 1.75rem 1.15rem 3rem; }
+    .masthead { padding: 0.75rem 1.15rem; }
+    .masthead nav { gap: 0.85rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>

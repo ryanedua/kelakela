@@ -1,0 +1,1750 @@
+{
+  "src\\content\\guides\\01-delta-main-basic-vs-classic-vs-extra.md": {
+    "bodyHash": "57111f8452d0bbcb",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\02-delta-ecredit-how-to-use.md": {
+    "bodyHash": "866c010e44a959bf",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\03-delta-travel-waiver-2026.md": {
+    "bodyHash": "238f5c4029780faf",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\04-delta-same-day-flight-change.md": {
+    "bodyHash": "2209a526222ff64f",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\05-delta-cancelled-flight-rights-refund.md": {
+    "bodyHash": "33648f74f503d34f",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\06-delta-refund-policy-2026.md": {
+    "bodyHash": "b23b34f15792a5d8",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\07-how-to-cancel-delta-flight.md": {
+    "bodyHash": "56bf2c9c4e8963c1",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\08-delta-delayed-flight-compensation.md": {
+    "bodyHash": "7d404293395ee799",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\09-delta-schedule-change-policy.md": {
+    "bodyHash": "806d68b3f1a212ff",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\10-delta-basic-economy-cancellation.md": {
+    "bodyHash": "a24924bed9a28d75",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\11-can-you-change-delta-flight-free.md": {
+    "bodyHash": "ebbbb022c2ab3956",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\12-delta-ecredit-expiration.md": {
+    "bodyHash": "abd43cc82b743719",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\13-delta-missed-flight-rebooking.md": {
+    "bodyHash": "2fdba76f0c3b316f",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\14-delta-weather-waiver-rebook.md": {
+    "bodyHash": "32426ac168847101",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\15-delta-no-show-policy-2026.md": {
+    "bodyHash": "aacfa26bf09d4cd4",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\16-delta-award-ticket-cancellation.md": {
+    "bodyHash": "16e7ced124c5f7f8",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\17-delta-ecredit-transfer.md": {
+    "bodyHash": "f97f69e56e7670f7",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\18-delta-basic-economy-baggage-2026.md": {
+    "bodyHash": "f3b93da293aba7e7",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\19-is-delta-basic-economy-worth-it.md": {
+    "bodyHash": "f1d514e054b182e2",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\20-delta-flight-status-check.md": {
+    "bodyHash": "a557a912c6a91449",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\21-delta-24-hour-cancellation-policy.md": {
+    "bodyHash": "9663454f9f2ecbc2",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\22-delta-skymiles-redemption-2026.md": {
+    "bodyHash": "13098816b1af0ab6",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\23-delta-significant-schedule-change.md": {
+    "bodyHash": "3117533622ce4797",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\24-delta-international-flight-cancellation.md": {
+    "bodyHash": "8cf3cc91df75677b",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\25-delta-ecredit-vs-travel-credit.md": {
+    "bodyHash": "2ea31d9444789806",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\26-delta-basic-business-fare-rules.md": {
+    "bodyHash": "85490947ed93747d",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\27-delta-refund-timeline.md": {
+    "bodyHash": "c2043c4687e52bda",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\28-delta-trip-delay-reimbursement.md": {
+    "bodyHash": "b2fe91cf15472336",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\29-delta-skymiles-expiration-policy.md": {
+    "bodyHash": "a3d978682be37c73",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\30-delta-medallion-status-change-fee-free.md": {
+    "bodyHash": "b4e70dae5409fc32",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\7-ways-to-reach-delta-air-lines-for-help.md": {
+    "bodyHash": "c449b247ab4da410",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\airport-desk-vs-phone-which-alaska-option-better.md": {
+    "bodyHash": "5618b88d598809bb",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\airport-desk-vs-phone-which-american-option-better.md": {
+    "bodyHash": "fbe83c6b99fdcbe0",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\airport-desk-vs-phone-which-delta-option-better.md": {
+    "bodyHash": "34a9a0eb7a2664eb",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\airport-desk-vs-phone-which-frontier-option-better.md": {
+    "bodyHash": "4259f5e4f576f1d1",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\airport-desk-vs-phone-which-jetblue-option-better.md": {
+    "bodyHash": "e438349b3122e93d",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\airport-desk-vs-phone-which-southwest-option-better.md": {
+    "bodyHash": "cc910cc41abc3942",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\airport-desk-vs-phone-which-spirit-option-better.md": {
+    "bodyHash": "cca9d96b6c808917",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\airport-desk-vs-phone-which-united-option-better.md": {
+    "bodyHash": "5a97ae310e83f5ac",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\alaska-airlines-bereavement-fare.md": {
+    "bodyHash": "6aeadc9d79194804",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\alaska-airlines-compassion-discount.md": {
+    "bodyHash": "1e676a6354052165",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\alaska-airlines-flight-disruption-rebooking.md": {
+    "bodyHash": "8fa91a724ed9a1e9",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\alaska-airlines-international-flight-booking.md": {
+    "bodyHash": "fc57495b30ac3fb9",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\alaska-airlines-passenger-rights.md": {
+    "bodyHash": "cbf2cec864ea96d6",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\alaska-airlines-ways-to-get-response-quickly.md": {
+    "bodyHash": "d38fa69821fbf387",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\alaska-app-chat-phone-best-contact-by-situation.md": {
+    "bodyHash": "5e51a1f0d57ed16e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\alaska-changed-flight-schedule-without-notice.md": {
+    "bodyHash": "8f98c95c6e5de9b4",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\alaska-customer-service-available-overnight.md": {
+    "bodyHash": "11876e3930ba738d",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\alaska-customer-service-callback-option.md": {
+    "bodyHash": "210ee14f6b96c11c",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\alaska-customer-service-least-busy-hours.md": {
+    "bodyHash": "1a06c2fa82871580",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\alaska-hold-time-too-long-alternatives.md": {
+    "bodyHash": "b09ed0d6ed43f525",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\alaska-not-responding-what-to-try-next.md": {
+    "bodyHash": "3b7c5a5ca9551628",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\alaska-phone-vs-chat-which-gets-help-faster.md": {
+    "bodyHash": "4e7a65eb8ad0b291",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\allegiant-air-ways-to-get-response-quickly.md": {
+    "bodyHash": "e4dc3761c9f949e8",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\american-airlines-bereavement-fare.md": {
+    "bodyHash": "a1a9f0bb867fa32c",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\american-airlines-compassion-discount.md": {
+    "bodyHash": "31a0c31905e5e452",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\american-airlines-flight-disruption-rebooking.md": {
+    "bodyHash": "8ac5d3871fe7d6ea",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\american-airlines-international-flight-booking.md": {
+    "bodyHash": "da555794bfadc913",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\american-airlines-passenger-rights.md": {
+    "bodyHash": "60f9d06867fe1303",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\american-airlines-ways-to-get-response-quickly.md": {
+    "bodyHash": "7c622c06ececa9bd",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\american-app-chat-phone-best-contact-by-situation.md": {
+    "bodyHash": "f193925e35424423",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\american-changed-flight-schedule-without-notice.md": {
+    "bodyHash": "f36a87411c26f9e3",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\american-customer-service-available-overnight.md": {
+    "bodyHash": "494259ee0d639e87",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\american-customer-service-callback-option.md": {
+    "bodyHash": "cb87e50bdc1fb979",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\american-customer-service-least-busy-hours.md": {
+    "bodyHash": "df34f91037b27b6f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\american-hold-time-too-long-alternatives.md": {
+    "bodyHash": "80d2865857e1d016",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\american-not-responding-what-to-try-next.md": {
+    "bodyHash": "c010e3b4aab8b740",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\american-phone-vs-chat-which-gets-help-faster.md": {
+    "bodyHash": "c2bed3146e65e6db",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\avoid-high-call-volume-contacting-alaska.md": {
+    "bodyHash": "98d23a12c656efd3",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\avoid-high-call-volume-contacting-american.md": {
+    "bodyHash": "4fedf8e2befc9944",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\avoid-high-call-volume-contacting-delta.md": {
+    "bodyHash": "a98a581400309895",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\avoid-high-call-volume-contacting-frontier.md": {
+    "bodyHash": "e57d33556af1a72b",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\avoid-high-call-volume-contacting-jetblue.md": {
+    "bodyHash": "3742674793fad943",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\avoid-high-call-volume-contacting-southwest.md": {
+    "bodyHash": "f26a0c97bfd7ac04",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\avoid-high-call-volume-contacting-spirit.md": {
+    "bodyHash": "e177b16015ea80bb",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\avoid-high-call-volume-contacting-united.md": {
+    "bodyHash": "0fb648d0d0231a4e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\best-time-call-alaska-customer-service.md": {
+    "bodyHash": "3027b259f9b44982",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\best-time-call-american-customer-service.md": {
+    "bodyHash": "a67499bcf0ef2937",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\best-time-call-delta-customer-service.md": {
+    "bodyHash": "e6d3b775d9e3bf2e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\best-time-call-frontier-customer-service.md": {
+    "bodyHash": "90c38d4247aa4391",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\best-time-call-jetblue-customer-service.md": {
+    "bodyHash": "467537a743b890e8",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\best-time-call-southwest-customer-service.md": {
+    "bodyHash": "21eb6ab9be091f67",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\best-time-call-spirit-customer-service.md": {
+    "bodyHash": "7cff3c5185b611ab",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\best-time-call-united-customer-service.md": {
+    "bodyHash": "57ab1ad0faffe4aa",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\best-ways-to-get-in-touch-with-delta-air-lines.md": {
+    "bodyHash": "c9126056b2e68b92",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\booking-40-methods-how-to-get-delta-to-respond-quickly.md": {
+    "bodyHash": "ca593c5c8c4691c1",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\booking-quick-10-tips~guide-how-to-get-delta-to-respond-quickly-airlinehub-sat-jul-18-2026-united-states.md": {
+    "bodyHash": "668c95594d32906e",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\booking-self-connecting-separate-tickets.md": {
+    "bodyHash": "a09f10e46972d088",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\calling-alaska-vs-using-app-which-more-reliable.md": {
+    "bodyHash": "b1440700743d6c65",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\calling-american-vs-using-app-which-more-reliable.md": {
+    "bodyHash": "ca793d897bed54ca",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\calling-delta-air-lines-what-to-know-before-you-dial.md": {
+    "bodyHash": "8d6d8a29b87c1552",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\calling-delta-vs-using-app-which-more-reliable.md": {
+    "bodyHash": "ec3fba95162469c7",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\calling-frontier-vs-using-app-which-more-reliable.md": {
+    "bodyHash": "a81d43e8e650f19b",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\calling-jetblue-vs-using-app-which-more-reliable.md": {
+    "bodyHash": "a4c95695cf61632f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\calling-southwest-vs-using-app-which-more-reliable.md": {
+    "bodyHash": "35c511c8905bb556",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\calling-spirit-vs-using-app-which-more-reliable.md": {
+    "bodyHash": "855dfa6692d62c64",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\calling-united-vs-using-app-which-more-reliable.md": {
+    "bodyHash": "9d600beda730c144",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\can-i-change-my-delta-flight-for-free.md": {
+    "bodyHash": "37f163417e516891",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\can-i-get-cash-refund-delta-cancelled-flight.md": {
+    "bodyHash": "df186593f82884b6",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\changes-cancellations-no-change-fee-fare-difference.md": {
+    "bodyHash": "2ff4c7caf4126248",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\complete-guide-contacting-delta-air-lines.md": {
+    "bodyHash": "9b7ab52d1d926b8b",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-alaska-customer-service-on-holiday.md": {
+    "bodyHash": "ed2ad55497d42d78",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-alaska-faster-urgent-help.md": {
+    "bodyHash": "d903c01dc6c9daf9",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-american-customer-service-on-holiday.md": {
+    "bodyHash": "a339768fb5858d82",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-american-faster-urgent-help.md": {
+    "bodyHash": "505a18583cf84306",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-delta-customer-service-on-holiday.md": {
+    "bodyHash": "d1d363b3458a7714",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-delta-faster-urgent-help.md": {
+    "bodyHash": "63727e679b7cc831",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-delta-phone-messaging-or-online.md": {
+    "bodyHash": "f164fa78afd0209d",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-frontier-customer-service-on-holiday.md": {
+    "bodyHash": "3aa1ef193ee3e901",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-frontier-faster-urgent-help.md": {
+    "bodyHash": "eed40eb146184824",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-jetblue-customer-service-on-holiday.md": {
+    "bodyHash": "7194def4e62aae52",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-jetblue-faster-urgent-help.md": {
+    "bodyHash": "475486ea693dcff1",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-southwest-customer-service-on-holiday.md": {
+    "bodyHash": "2e0e89881169cb3c",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-southwest-faster-urgent-help.md": {
+    "bodyHash": "be31c5e7cc29ca93",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-spirit-customer-service-on-holiday.md": {
+    "bodyHash": "d958f62b0335f67f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-spirit-faster-urgent-help.md": {
+    "bodyHash": "67be7549f03e6af5",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-united-customer-service-on-holiday.md": {
+    "bodyHash": "87e020b01ed4a324",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\contact-united-faster-urgent-help.md": {
+    "bodyHash": "dfdce24cc2b02a00",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\delays-compensation-missed-connection-different-airline.md": {
+    "bodyHash": "a0b8df65030ab6d6",
+    "updated": "2026-07-15"
+  },
+  "src\\content\\guides\\delays-compensation-quick-11-tips~guide-how-to-get-delta-to-respond-quickly-officialhub-sat-jul-18-2026-united-states.md": {
+    "bodyHash": "668c95594d32906e",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-24-hour-cancellation-policy.md": {
+    "bodyHash": "2f11f7bf87f5bcbc",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-72-hour-flight-change-rule-explained.md": {
+    "bodyHash": "41cd49bf9bf7fc50",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-app-chat-phone-best-contact-by-situation.md": {
+    "bodyHash": "535ca3de62202bf7",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\delta-award-cancellation-fee-skymiles-2026.md": {
+    "bodyHash": "b45a883b85d851c3",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-award-ticket-change-policy.md": {
+    "bodyHash": "5eebc7fba95dc9d4",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-basic-economy-baggage-2026.md": {
+    "bodyHash": "c9aa41e4d15e32b4",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-basic-economy-carry-on-allowed.md": {
+    "bodyHash": "439a36008d3da85d",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-basic-economy-change-fee.md": {
+    "bodyHash": "b9e7fa18fbab660b",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-basic-economy-seat-assignment-after-checkin.md": {
+    "bodyHash": "155e3937f0ba3bdb",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-basic-economy-vs-main-cabin.md": {
+    "bodyHash": "978e1e4fafdc2df1",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-basic-vs-classic-fare.md": {
+    "bodyHash": "5f7e37f953c0c52f",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-bereavement-fare.md": {
+    "bodyHash": "c372c1d2e646546d",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\delta-booking-change-same-airport-different-city.md": {
+    "bodyHash": "82baa49de2cdb4fa",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-cancel-flight-24-hours-before-departure-fee.md": {
+    "bodyHash": "1f60e524be0bb22a",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-cancel-flight-and-get-full-refund-how.md": {
+    "bodyHash": "b1ef5987423a814b",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-cancel-flight-before-departure.md": {
+    "bodyHash": "d15b248fa84b550e",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-cancel-without-penalty-qualifying-reasons.md": {
+    "bodyHash": "25641fba2e24549f",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-change-flight-before-24-hours-rule.md": {
+    "bodyHash": "dafc478875b0451c",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-change-flight-date-online.md": {
+    "bodyHash": "aeba3a4b8a081621",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-change-flight-to-earlier-same-day-free.md": {
+    "bodyHash": "cc0b1d361fe82c6c",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-changed-flight-schedule-without-notice.md": {
+    "bodyHash": "b2189f1ebbc51ef6",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\delta-classic-ticket-no-change-fee-explained.md": {
+    "bodyHash": "68057834aa5fbace",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-companion-upgrade-certificate-2026.md": {
+    "bodyHash": "e1684b658a5014c5",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-compassion-discount.md": {
+    "bodyHash": "44a04976dd5e4504",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\delta-customer-service-available-overnight.md": {
+    "bodyHash": "bd7c0bba97ab259a",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\delta-customer-service-callback-option.md": {
+    "bodyHash": "598204a7c4263e88",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\delta-customer-service-least-busy-hours.md": {
+    "bodyHash": "5c5293e62f2fe489",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\delta-delayed-flight-compensation-2026.md": {
+    "bodyHash": "e2974703ccc7035c",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-ecredit-apply-to-another-person-booking.md": {
+    "bodyHash": "f0e1870573ecc5ee",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-ecredit-expiration-2026.md": {
+    "bodyHash": "6f8291ccc1423bdb",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-ecredit-expired-what-to-do.md": {
+    "bodyHash": "11679791ad8e6f93",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-ecredit-how-to-use.md": {
+    "bodyHash": "34255f9e9afb84a1",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-ecredit-one-year-from-purchase-date.md": {
+    "bodyHash": "92af5d3ceecb0839",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-ecredit-to-miles-transfer.md": {
+    "bodyHash": "08756d87c7a7d71f",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-extra-ticket-refund.md": {
+    "bodyHash": "0b75dcb87eaf191d",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-first-class-basic-fare-no-seat-selection.md": {
+    "bodyHash": "81edd94278a30557",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-first-class-upgrade-2026.md": {
+    "bodyHash": "858025c87b2623e5",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-flight-booking-customer-service.md": {
+    "bodyHash": "f05e727512c63751",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-flight-cancellation-compensation-dot.md": {
+    "bodyHash": "82ff2c69fdbf776f",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-flight-cancelled-refund-2026.md": {
+    "bodyHash": "9c69b031ed247af7",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-flight-cancelled-what-am-i-entitled-to-2026.md": {
+    "bodyHash": "e7a4c80c72475eb8",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-flight-change-fee-waiver-2026.md": {
+    "bodyHash": "5f59bd6b0f2fe74a",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-flight-delay-meal-voucher-policy-2026.md": {
+    "bodyHash": "763c0fbe4d1cfd06",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-flight-disruption-rebooking.md": {
+    "bodyHash": "1f64f407bf62797a",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\delta-flight-status-check.md": {
+    "bodyHash": "107c3ebd7a7087b9",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-hold-time-too-long-alternatives.md": {
+    "bodyHash": "9f0e77284f5c700e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\delta-how-to-use-ecredit-online.md": {
+    "bodyHash": "523cd3a9017184cf",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-international-flight-cancellation-refund.md": {
+    "bodyHash": "3dd48ca19b57d134",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-international-flight-cancelled-refund-cash.md": {
+    "bodyHash": "834df0e9ff7e69f8",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-international-flights-booking.md": {
+    "bodyHash": "955551d8a722f740",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\delta-main-basic-can-you-cancel-before-departure.md": {
+    "bodyHash": "b52b708d1b105e87",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-main-basic-cancellation.md": {
+    "bodyHash": "550b4eeb8531ff68",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-main-classic-refund-policy.md": {
+    "bodyHash": "09e59ce4e22076b6",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-main-extra-refund-original-payment-method.md": {
+    "bodyHash": "c25c0dabe71c6a4e",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-medallion-status-flight-change-free.md": {
+    "bodyHash": "3f7cf00351df7dc1",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-missed-flight-rebooking.md": {
+    "bodyHash": "da7d8b14c4a0424c",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-missed-flight-what-to-do-next-steps.md": {
+    "bodyHash": "f41017497d004f87",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-no-show-missed-flight-ecredit-policy.md": {
+    "bodyHash": "2ce190fbccd26dd0",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-no-show-policy-2026.md": {
+    "bodyHash": "33a6948b6907def1",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-not-responding-what-to-try-next.md": {
+    "bodyHash": "dc17e466c1734ff3",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\delta-passenger-rights.md": {
+    "bodyHash": "a264e409ee15e111",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\delta-phone-contact-options-common-travel-problems.md": {
+    "bodyHash": "b62770663af74aa3",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\delta-phone-vs-chat-which-gets-help-faster.md": {
+    "bodyHash": "1a1425b7cfeff8a7",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\delta-rebooking-after-weather-delay.md": {
+    "bodyHash": "fd76aa7a7f6b516a",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-same-day-confirmed-vs-standby-difference.md": {
+    "bodyHash": "cf48513f90d740fc",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-same-day-flight-change-fee.md": {
+    "bodyHash": "c7a51f0f7afe18fb",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-same-day-standby-policy.md": {
+    "bodyHash": "796c372cc037ddff",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-schedule-change-2-hour-rule-refund.md": {
+    "bodyHash": "0a17ee796fb9e544",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-schedule-change-policy.md": {
+    "bodyHash": "3b6073896e112151",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-significant-schedule-change-how-many-minutes.md": {
+    "bodyHash": "4768a38bfc4fa18d",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-significant-schedule-change-refund.md": {
+    "bodyHash": "65c3c128b5523bcd",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-skymiles-award-cancel-fee.md": {
+    "bodyHash": "cb1056fd4700b8f7",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-skymiles-redemption-2026.md": {
+    "bodyHash": "f37a52207606c4ca",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-skymiles-redeposit-fee-waived-2026.md": {
+    "bodyHash": "6bfa7409d15a5f23",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-storm-travel-waiver-june-2026.md": {
+    "bodyHash": "518648cbe0c054af",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-travel-credit-vs-ecredit.md": {
+    "bodyHash": "59dfc169340174c7",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-travel-waiver-rebook-refund-fast.md": {
+    "bodyHash": "f0752c2b53878104",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-trip-delay-reimbursement.md": {
+    "bodyHash": "213d1b9b7e7e4731",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-trip-in-a-bag-basic-economy-change-rules.md": {
+    "bodyHash": "a119a0f378d37868",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-ways-to-get-response-quickly.md": {
+    "bodyHash": "bbc64ede9ce31843",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-weather-delay-compensation-dot-2026.md": {
+    "bodyHash": "84fec65d6be263b0",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-weather-waiver-how-to-rebook-online.md": {
+    "bodyHash": "4a4a7f24e642835d",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\delta-weather-waiver-rebook.md": {
+    "bodyHash": "4ad7e9d3cc6bc9cf",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\does-alaska-customer-service-work-on-weekends.md": {
+    "bodyHash": "20f8ba1f33ff3567",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\does-american-customer-service-work-on-weekends.md": {
+    "bodyHash": "4e5e8265032bab8a",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\does-delta-charge-to-change-basic-economy-ticket.md": {
+    "bodyHash": "07307a86369f4e4f",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\does-delta-customer-service-work-on-weekends.md": {
+    "bodyHash": "4ad190c832eeaf57",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\does-delta-give-hotel-vouchers-for-flight-delays.md": {
+    "bodyHash": "d109511e03e4ffdd",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\does-frontier-customer-service-work-on-weekends.md": {
+    "bodyHash": "1a6dc1e7d7b4195a",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\does-jetblue-customer-service-work-on-weekends.md": {
+    "bodyHash": "615861bf9b49efb5",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\does-southwest-customer-service-work-on-weekends.md": {
+    "bodyHash": "1ba48e81a1be555e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\does-spirit-customer-service-work-on-weekends.md": {
+    "bodyHash": "b547672324701e4e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\does-united-customer-service-work-on-weekends.md": {
+    "bodyHash": "410b987ada4dfa83",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\flight-delayed-by-alaska-who-to-contact-when.md": {
+    "bodyHash": "e5b03aa1d880ef81",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\flight-delayed-by-american-who-to-contact-when.md": {
+    "bodyHash": "2ce5b9ab9acb3796",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\flight-delayed-by-delta-who-to-contact-when.md": {
+    "bodyHash": "1d99108a1fb42d65",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\flight-delayed-by-frontier-who-to-contact-when.md": {
+    "bodyHash": "f95834cb6d6fb28b",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\flight-delayed-by-jetblue-who-to-contact-when.md": {
+    "bodyHash": "c4b8a5204f05f800",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\flight-delayed-by-southwest-who-to-contact-when.md": {
+    "bodyHash": "249f75638bc7d233",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\flight-delayed-by-spirit-who-to-contact-when.md": {
+    "bodyHash": "59253bfb6e8e5fed",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\flight-delayed-by-united-who-to-contact-when.md": {
+    "bodyHash": "1959a6aa6d05d36f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\frontier-airlines-ways-to-get-response-quickly.md": {
+    "bodyHash": "249abb814e723280",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\frontier-app-chat-phone-best-contact-by-situation.md": {
+    "bodyHash": "629d5811f8eb0fd7",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\frontier-changed-flight-schedule-without-notice.md": {
+    "bodyHash": "64a38e6af634c0a6",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\frontier-customer-service-available-overnight.md": {
+    "bodyHash": "c2fef3104137e2d7",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\frontier-customer-service-callback-option.md": {
+    "bodyHash": "09e0d15183408d68",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\frontier-customer-service-least-busy-hours.md": {
+    "bodyHash": "5fdf111d08e5ba89",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\frontier-hold-time-too-long-alternatives.md": {
+    "bodyHash": "68d7e1f6e87d46fb",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\frontier-not-responding-what-to-try-next.md": {
+    "bodyHash": "1d6dba793047538c",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\frontier-phone-vs-chat-which-gets-help-faster.md": {
+    "bodyHash": "2fd9fb02cf446498",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\hawaiian-airlines-ways-to-get-response-quickly.md": {
+    "bodyHash": "a13e52e919c9377a",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\how-long-does-delta-ecredit-last-2026.md": {
+    "bodyHash": "8ea7d9abc0a2d4c2",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\how-to-change-name-on-delta-airlines-ticket-2026.md": {
+    "bodyHash": "2df8b397240e88a7",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\how-to-change-name-on-delta-airlines-ticket.md": {
+    "bodyHash": "d3e4b0900f9a3aab",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\how-to-check-delta-ecredit-balance-online.md": {
+    "bodyHash": "f10595241227a4e8",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\how-to-get-alaska-airlines-to-respond-quickly.md": {
+    "bodyHash": "f568fbd29578845c",
+    "updated": "2026-07-20"
+  },
+  "src\\content\\guides\\how-to-get-american-airlines-to-respond-quickly.md": {
+    "bodyHash": "fc456c7e2d348a4b",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\how-to-get-delta-to-respond-quickly.md": {
+    "bodyHash": "9651c05aa252ea99",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\how-to-get-jetblue-to-respond-quickly.md": {
+    "bodyHash": "c42b6ad44ff10f63",
+    "updated": "2026-07-20"
+  },
+  "src\\content\\guides\\how-to-get-southwest-airlines-to-respond-quickly.md": {
+    "bodyHash": "8af9ba737c56f814",
+    "updated": "2026-07-20"
+  },
+  "src\\content\\guides\\how-to-get-united-to-respond-quickly.md": {
+    "bodyHash": "77bf5b32ab9b0271",
+    "updated": "2026-07-20"
+  },
+  "src\\content\\guides\\how-to-rebook-delta-flight-after-cancellation.md": {
+    "bodyHash": "f555fcdb0683e931",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\how-to-rebook-delta-flight-after-weather-cancellation.md": {
+    "bodyHash": "74b52b2cfb47bca4",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\how-to-use-delta-ecredit-for-someone-else.md": {
+    "bodyHash": "ea158cd4b7be52b1",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\is-alaska-customer-service-available-24-hours.md": {
+    "bodyHash": "d88852deee9c8b84",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\is-american-customer-service-available-24-hours.md": {
+    "bodyHash": "637d5a543a6d2a08",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\is-delta-basic-economy-worth-it-2026.md": {
+    "bodyHash": "579fb37df4bd2d1c",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\is-delta-customer-service-available-24-hours.md": {
+    "bodyHash": "bad92387286745be",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\is-frontier-customer-service-available-24-hours.md": {
+    "bodyHash": "24a6d8d37cbb7d0a",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\is-jetblue-customer-service-available-24-hours.md": {
+    "bodyHash": "3237e1aa48af440c",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\is-southwest-customer-service-available-24-hours.md": {
+    "bodyHash": "a5ef83986a48eaa4",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\is-spirit-customer-service-available-24-hours.md": {
+    "bodyHash": "cc5d5f5d0e3512d4",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\is-united-customer-service-available-24-hours.md": {
+    "bodyHash": "1cf5847e2eaa91e4",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\jetblue-airways-ways-to-get-response-quickly.md": {
+    "bodyHash": "f3e750ce83469b5a",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\jetblue-app-chat-phone-best-contact-by-situation.md": {
+    "bodyHash": "0543388de8e971f4",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\jetblue-changed-flight-schedule-without-notice.md": {
+    "bodyHash": "ba73c970e77a79af",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\jetblue-customer-service-available-overnight.md": {
+    "bodyHash": "701108ba54a7e18f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\jetblue-customer-service-callback-option.md": {
+    "bodyHash": "2690a0f445fa1905",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\jetblue-customer-service-least-busy-hours.md": {
+    "bodyHash": "409b2a774dc3f3cd",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\jetblue-flight-disruption-rebooking.md": {
+    "bodyHash": "a7c76e552f863bce",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\jetblue-hold-time-too-long-alternatives.md": {
+    "bodyHash": "2104c222fa20aabf",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\jetblue-not-responding-what-to-try-next.md": {
+    "bodyHash": "ac3ec246b3912daa",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\jetblue-passenger-rights.md": {
+    "bodyHash": "490d1f0b6d4e1942",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\jetblue-phone-vs-chat-which-gets-help-faster.md": {
+    "bodyHash": "596a81d8a559e437",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\last-minute-priceline-deals.md": {
+    "bodyHash": "d7f5fb284ea2b4f7",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\missed-connecting-alaska-flight-how-to-rebook.md": {
+    "bodyHash": "fcb4d180ab68255f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\missed-connecting-american-flight-how-to-rebook.md": {
+    "bodyHash": "ed1e8cd81baabacf",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\missed-connecting-delta-flight-how-to-rebook.md": {
+    "bodyHash": "fb0f626d29817c9f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\missed-connecting-frontier-flight-how-to-rebook.md": {
+    "bodyHash": "c061a6880c8337ba",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\missed-connecting-jetblue-flight-how-to-rebook.md": {
+    "bodyHash": "8277e7647d667bb6",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\missed-connecting-southwest-flight-how-to-rebook.md": {
+    "bodyHash": "36557db6a63b5e18",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\missed-connecting-spirit-flight-how-to-rebook.md": {
+    "bodyHash": "0790f50bcb805436",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\missed-connecting-united-flight-how-to-rebook.md": {
+    "bodyHash": "2de929cb7cf67016",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\need-help-from-delta-start-with-these-contact-options.md": {
+    "bodyHash": "eb727682f38d6e14",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\priceline-cheap-flights-how-to-book-and-save-in-2026.md": {
+    "bodyHash": "327704cd0981e166",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\priceline-cheap-flights.md": {
+    "bodyHash": "aa0ab0d6b9e2a49c",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\quick-10-tips~guide-how-to-get-american-to-respond-quickly.md": {
+    "bodyHash": "159e48865d82aad5",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\reach-alaska-customer-service-from-outside-us.md": {
+    "bodyHash": "5b4f3d10ab834cc6",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-american-customer-service-from-outside-us.md": {
+    "bodyHash": "f061ad5d77ed3bca",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-delta-booking-refund-baggage-help.md": {
+    "bodyHash": "fae8da0f4e34d432",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-delta-customer-service-from-outside-us.md": {
+    "bodyHash": "19b2a9092de5893c",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-frontier-customer-service-from-outside-us.md": {
+    "bodyHash": "760e8d0ac78b51d0",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-jetblue-customer-service-from-outside-us.md": {
+    "bodyHash": "7f5bd8d69d2aaae0",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-live-agent-alaska-fast.md": {
+    "bodyHash": "20df0b16bc896881",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-live-agent-american-fast.md": {
+    "bodyHash": "62c8adfb9956dbea",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-live-agent-delta-fast.md": {
+    "bodyHash": "e03729b318ab1f3a",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-live-agent-frontier-fast.md": {
+    "bodyHash": "ee870387c9a3f44e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-live-agent-jetblue-fast.md": {
+    "bodyHash": "46654ed95c1426a8",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-live-agent-southwest-fast.md": {
+    "bodyHash": "70afcb9422b58758",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-live-agent-spirit-fast.md": {
+    "bodyHash": "471d286d4907314f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-live-agent-united-fast.md": {
+    "bodyHash": "ce708d3507d5410c",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-real-person-alaska-customer-service.md": {
+    "bodyHash": "c668b6332dbe5a2f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-real-person-american-customer-service.md": {
+    "bodyHash": "6c6c4dc9feb67614",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-real-person-delta-customer-service.md": {
+    "bodyHash": "3070e27012402239",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-real-person-frontier-customer-service.md": {
+    "bodyHash": "03897fb5f120c8b2",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-real-person-jetblue-customer-service.md": {
+    "bodyHash": "22c4de86ed49955f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-real-person-southwest-customer-service.md": {
+    "bodyHash": "6228039f195d2ae1",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-real-person-spirit-customer-service.md": {
+    "bodyHash": "a125cad35c36a952",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-real-person-united-customer-service.md": {
+    "bodyHash": "073e109fb81bf33b",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-southwest-customer-service-from-outside-us.md": {
+    "bodyHash": "915a739fbb631a58",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-spirit-customer-service-from-outside-us.md": {
+    "bodyHash": "b5068b38dd19dc26",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reach-united-customer-service-from-outside-us.md": {
+    "bodyHash": "1c334820923f56fe",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reduce-wait-time-alaska-customer-service.md": {
+    "bodyHash": "8f0d6d90adee41c2",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reduce-wait-time-american-customer-service.md": {
+    "bodyHash": "a89683392c5153b0",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reduce-wait-time-delta-customer-service.md": {
+    "bodyHash": "ecf8512ddcd107c0",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reduce-wait-time-frontier-customer-service.md": {
+    "bodyHash": "17ef5cb11d98078b",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reduce-wait-time-jetblue-customer-service.md": {
+    "bodyHash": "84717ab01ab97941",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reduce-wait-time-southwest-customer-service.md": {
+    "bodyHash": "c3c01db9e6c83974",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reduce-wait-time-spirit-customer-service.md": {
+    "bodyHash": "15fb42d3efef8fe1",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\reduce-wait-time-united-customer-service.md": {
+    "bodyHash": "a5dfbc4072c8552c",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\resolve-alaska-issue-without-calling-customer-service.md": {
+    "bodyHash": "fea63f1b9f59d038",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\resolve-american-issue-without-calling-customer-service.md": {
+    "bodyHash": "b7a99ad2830e5c7e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\resolve-delta-issue-without-calling-customer-service.md": {
+    "bodyHash": "c48e70913c24046e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\resolve-frontier-issue-without-calling-customer-service.md": {
+    "bodyHash": "c753b8dece081ef7",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\resolve-jetblue-issue-without-calling-customer-service.md": {
+    "bodyHash": "dc68d18b54ddb8fc",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\resolve-southwest-without-calling-customer-service.md": {
+    "bodyHash": "33c6aa40904add25",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\resolve-spirit-issue-without-calling-customer-service.md": {
+    "bodyHash": "0a4b8d68d6d7f0f5",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\resolve-united-issue-without-calling-customer-service.md": {
+    "bodyHash": "78f84ee8150e4c23",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\s3-can-i-change-my-delta-flight-for-free.md": {
+    "bodyHash": "224fe406718f02a3",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-03.md": {
+    "bodyHash": "496ef76248fea820",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-04.md": {
+    "bodyHash": "9cddc807744cd862",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-05.md": {
+    "bodyHash": "09ca05606b9a18c3",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-06.md": {
+    "bodyHash": "08c368f474469b61",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-07.md": {
+    "bodyHash": "7d914740d30304bd",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-08.md": {
+    "bodyHash": "25db57c860fc6deb",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-09.md": {
+    "bodyHash": "0bb6825e7559da78",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-10.md": {
+    "bodyHash": "af200a086c5790fd",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-11.md": {
+    "bodyHash": "acc3ccb340c7dd53",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-12.md": {
+    "bodyHash": "c34fd7036c3011fa",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-13.md": {
+    "bodyHash": "1a029236f81205dd",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-14.md": {
+    "bodyHash": "9f22256060e424d1",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-15.md": {
+    "bodyHash": "c9220a723e766d9f",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-16.md": {
+    "bodyHash": "a37ff90d95881d2d",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-17.md": {
+    "bodyHash": "6398ed51dc8f882e",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-18.md": {
+    "bodyHash": "5d604da762cb6886",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-19.md": {
+    "bodyHash": "2257e7c0c6cb7b62",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-20.md": {
+    "bodyHash": "5afde0e3b4f8c4ad",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-21.md": {
+    "bodyHash": "68d458e6bfe1782c",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-22.md": {
+    "bodyHash": "8e6da5c36030f784",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-23.md": {
+    "bodyHash": "dcac13e524a3dae8",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-24.md": {
+    "bodyHash": "5d5b7ffdce8475d8",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-25.md": {
+    "bodyHash": "dfb8108b50e9743c",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-26.md": {
+    "bodyHash": "2f55cb56f3a4ca70",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-27.md": {
+    "bodyHash": "f7d728e448ed2853",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-28.md": {
+    "bodyHash": "b1f228b73cc67c6e",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-29.md": {
+    "bodyHash": "6ed9ce5c9b4ab694",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\s3-paa-30.md": {
+    "bodyHash": "87f5b015844c57de",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\southwest-airlines-passenger-rights.md": {
+    "bodyHash": "0218a7d401096543",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\southwest-airlines-ways-to-get-response-quickly.md": {
+    "bodyHash": "5b65008ed6cfe14a",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\southwest-app-chat-phone-best-contact-by-situation.md": {
+    "bodyHash": "40790cda9f6b7f36",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\southwest-changed-flight-schedule-without-notice.md": {
+    "bodyHash": "7f9e8ced28aab0fb",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\southwest-customer-service-available-overnight.md": {
+    "bodyHash": "961ba90e760eff2d",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\southwest-customer-service-callback-option.md": {
+    "bodyHash": "65b22e40d419d453",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\southwest-customer-service-least-busy-hours.md": {
+    "bodyHash": "1af9d7ce95687452",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\southwest-flight-disruption-rebooking.md": {
+    "bodyHash": "0ac2987d44bdaa66",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\southwest-hold-time-too-long-alternatives.md": {
+    "bodyHash": "2a21640603d30863",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\southwest-not-responding-what-to-try-next.md": {
+    "bodyHash": "432be3da67bc3d4f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\southwest-phone-vs-chat-which-gets-help-faster.md": {
+    "bodyHash": "6e919fbf000408eb",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\speak-with-alaska-representative-booking.md": {
+    "bodyHash": "6d6ab3684bfc9136",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\speak-with-american-representative-booking.md": {
+    "bodyHash": "a679f0e6b862b2b3",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\speak-with-delta-representative-booking.md": {
+    "bodyHash": "5e8e7d3c30889847",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\speak-with-frontier-representative-booking.md": {
+    "bodyHash": "ebe1c04ff0f08899",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\speak-with-jetblue-representative-booking.md": {
+    "bodyHash": "22659953f579aa34",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\speak-with-southwest-representative-booking.md": {
+    "bodyHash": "804bacea64452504",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\speak-with-spirit-representative-booking.md": {
+    "bodyHash": "5d68a55c801e555a",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\speak-with-united-representative-booking.md": {
+    "bodyHash": "14838e7c00fcf464",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\spirit-airlines-ways-to-get-response-quickly.md": {
+    "bodyHash": "398c22296a3d6c83",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\spirit-app-chat-phone-best-contact-by-situation.md": {
+    "bodyHash": "44fb9c7c80665370",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\spirit-changed-flight-schedule-without-notice.md": {
+    "bodyHash": "8632073040dbdf68",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\spirit-customer-service-available-overnight.md": {
+    "bodyHash": "56d775889d8ac996",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\spirit-customer-service-callback-option.md": {
+    "bodyHash": "a8a592cece43b694",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\spirit-customer-service-least-busy-hours.md": {
+    "bodyHash": "dbd99bccb7eb6d9b",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\spirit-hold-time-too-long-alternatives.md": {
+    "bodyHash": "c6af17021618beeb",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\spirit-not-responding-what-to-try-next.md": {
+    "bodyHash": "b8a54282078a7bc6",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\spirit-phone-vs-chat-which-gets-help-faster.md": {
+    "bodyHash": "58ac5eec54fdc957",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\stuck-alaska-automated-menu-get-live-agent.md": {
+    "bodyHash": "548ef06dab05f75f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\stuck-american-automated-menu-get-live-agent.md": {
+    "bodyHash": "2dd4d3631b565c5d",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\stuck-delta-automated-menu-get-live-agent.md": {
+    "bodyHash": "2d8ead7f9edc62a4",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\stuck-frontier-automated-menu-get-live-agent.md": {
+    "bodyHash": "3668ed4716f3f68b",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\stuck-jetblue-automated-menu-get-live-agent.md": {
+    "bodyHash": "c36de30565c7deb3",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\stuck-southwest-automated-menu-get-live-agent.md": {
+    "bodyHash": "59bdf762b3d56964",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\stuck-spirit-automated-menu-get-live-agent.md": {
+    "bodyHash": "6d89657eeab7f41e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\stuck-united-automated-menu-get-live-agent.md": {
+    "bodyHash": "a1db2c79a35f2628",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\united-airlines-bereavement-fare.md": {
+    "bodyHash": "c9f07df59170218d",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\united-airlines-compassion-discount.md": {
+    "bodyHash": "31a8a89267f8b81a",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\united-airlines-international-flight-booking.md": {
+    "bodyHash": "3cd4c7a2f29e57c0",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\united-airlines-passenger-rights.md": {
+    "bodyHash": "9ef3baf75b233cfc",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\united-airlines-ways-to-get-response-quickly.md": {
+    "bodyHash": "86ee47648918c866",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\united-app-chat-phone-best-contact-by-situation.md": {
+    "bodyHash": "45c58376f3d67ddd",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\united-changed-flight-schedule-without-notice.md": {
+    "bodyHash": "b2c1b97fcf933789",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\united-customer-service-available-overnight.md": {
+    "bodyHash": "c9dec8231393538e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\united-customer-service-callback-option.md": {
+    "bodyHash": "2c67b163a11d1f39",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\united-customer-service-least-busy-hours.md": {
+    "bodyHash": "939e81414ec26855",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\united-flight-disruption-rebooking.md": {
+    "bodyHash": "1b35285dc427b761",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\guides\\united-hold-time-too-long-alternatives.md": {
+    "bodyHash": "68fb02eaf8e79ea0",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\united-not-responding-what-to-try-next.md": {
+    "bodyHash": "8f1fd366b70a176d",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\united-phone-vs-chat-which-gets-help-faster.md": {
+    "bodyHash": "6051a1b4bbbb755b",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\what-happens-if-delta-changes-my-flight-time.md": {
+    "bodyHash": "80bb8ae58ed392b1",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\what-to-do-when-alaska-cancels-your-flight.md": {
+    "bodyHash": "de41dbfe03a42c37",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\what-to-do-when-american-cancels-your-flight.md": {
+    "bodyHash": "83c72ad154598364",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\what-to-do-when-delta-cancels-your-flight.md": {
+    "bodyHash": "2fde9e4ded91b0ee",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\what-to-do-when-frontier-cancels-your-flight.md": {
+    "bodyHash": "cf83b0ea9b575521",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\what-to-do-when-jetblue-cancels-your-flight.md": {
+    "bodyHash": "ce5e8a67f8509be3",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\what-to-do-when-southwest-cancels-your-flight.md": {
+    "bodyHash": "db09efedcf765496",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\what-to-do-when-spirit-cancels-your-flight.md": {
+    "bodyHash": "2f2e4bb943e206a9",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\what-to-do-when-united-cancels-your-flight.md": {
+    "bodyHash": "7ff1b5bb107889ae",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\when-does-delta-issue-travel-waiver.md": {
+    "bodyHash": "48a23c8298ad554e",
+    "updated": "2026-07-18"
+  },
+  "src\\content\\guides\\when-to-ask-supervisor-alaska-customer-service.md": {
+    "bodyHash": "a9d17b02f634e898",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\when-to-ask-supervisor-american-customer-service.md": {
+    "bodyHash": "a26a179244ed9cea",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\when-to-ask-supervisor-delta-customer-service.md": {
+    "bodyHash": "251e15aa88f56981",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\when-to-ask-supervisor-frontier-customer-service.md": {
+    "bodyHash": "64534f7f10a1bf3e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\when-to-ask-supervisor-jetblue-customer-service.md": {
+    "bodyHash": "d24bd25eb841957f",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\when-to-ask-supervisor-southwest-customer-service.md": {
+    "bodyHash": "4b1bbc15f8f44c74",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\when-to-ask-supervisor-spirit-customer-service.md": {
+    "bodyHash": "2770adfb94fcb006",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\when-to-ask-supervisor-united-customer-service.md": {
+    "bodyHash": "b945490778ceb793",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\which-alaska-department-to-contact.md": {
+    "bodyHash": "b6489d20a0bf1006",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\which-american-department-to-contact.md": {
+    "bodyHash": "fd28daecf5e0f896",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\which-delta-department-to-contact.md": {
+    "bodyHash": "040a7d96ade111ad",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\which-frontier-department-to-contact.md": {
+    "bodyHash": "0611d3575bf9445b",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\which-jetblue-department-to-contact.md": {
+    "bodyHash": "7533eab8bfa401ae",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\which-southwest-department-to-contact.md": {
+    "bodyHash": "828f57d56b0f0ad4",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\which-spirit-department-to-contact.md": {
+    "bodyHash": "03b1c5954ecfc40e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\which-united-department-to-contact.md": {
+    "bodyHash": "a51f5269938f89ca",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\why-alaska-customer-service-takes-so-long.md": {
+    "bodyHash": "bc31c574c8e7fcd9",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\why-american-customer-service-takes-so-long.md": {
+    "bodyHash": "274fbea785d7804e",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\why-delta-customer-service-takes-so-long.md": {
+    "bodyHash": "b0ce05c4633a1a38",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\why-frontier-customer-service-takes-so-long.md": {
+    "bodyHash": "8e158d44d9a00922",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\why-jetblue-customer-service-takes-so-long.md": {
+    "bodyHash": "32141dcfca967f70",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\why-southwest-customer-service-takes-so-long.md": {
+    "bodyHash": "93b87094c9c18128",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\why-spirit-customer-service-takes-so-long.md": {
+    "bodyHash": "75dd00987cb2131a",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\guides\\why-united-customer-service-takes-so-long.md": {
+    "bodyHash": "ecfe9673a5b87054",
+    "updated": "2026-07-22"
+  },
+  "src\\content\\policies\\alaska-baggage.md": {
+    "bodyHash": "f8092aaebce9bcb6",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\policies\\american-baggage.md": {
+    "bodyHash": "850fe854a526df39",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\policies\\delta-baggage.md": {
+    "bodyHash": "2986d57a9a1e2ce7",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\policies\\jetblue-baggage.md": {
+    "bodyHash": "05b0d4f629d01562",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\policies\\southwest-baggage.md": {
+    "bodyHash": "325b973bdae8551f",
+    "updated": "2026-07-17"
+  },
+  "src\\content\\policies\\united-baggage.md": {
+    "bodyHash": "495792178f75f77b",
+    "updated": "2026-07-17"
+  }
+}

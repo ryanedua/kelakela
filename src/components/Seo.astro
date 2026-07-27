@@ -1,0 +1,96 @@
+---
+import { SITE } from '../data/site';
+
+interface Source { label: string; url: string; retrieved: Date }
+interface Faq { q: string; a: string }
+
+interface Props {
+  title: string;
+  description: string;
+  published: Date;
+  updated: Date;
+  canonical?: string;
+  noindex?: boolean;
+  isHowTo?: boolean;
+  faq?: Faq[];
+  sources?: Source[];
+}
+
+const {
+  title, description, published, updated,
+  canonical, noindex = false, isHowTo = false,
+  faq = [], sources = [],
+} = Astro.props;
+
+const url = canonical ?? new URL(Astro.url.pathname, SITE.origin).href;
+const iso = (d: Date) => d.toISOString();
+
+/* Article. dateModified is the freshness signal Google reads — it is only
+   honest if `updated` is bumped when content changes, not on every build. */
+const article = {
+  '@context': 'https://schema.org',
+  '@type': isHowTo ? 'HowTo' : 'Article',
+  headline: title,
+  description,
+  datePublished: iso(published),
+  dateModified: iso(updated),
+  mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.origin,
+  },
+  /* citation tells Google the claims trace to the airline's own page.
+     For YMYL-adjacent policy content this is doing real work. */
+  ...(sources.length && {
+    citation: sources.map((s) => ({
+      '@type': 'WebPage',
+      name: s.label,
+      url: s.url,
+    })),
+  }),
+};
+
+/* Only emit FAQPage when the Q&A is genuinely on the page.
+   Marking up FAQs that aren't visible is a manual-action risk. */
+const faqSchema = faq.length && {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={url} />
+
+{/* SVG favicon covers every modern browser and scales to any tab size.
+    The .ico fallback is only for older Safari, which ignores rel="icon" SVG. */}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="theme-color" content="#0B1F3A" />
+
+{/* Single-language site, so these are self-referencing. x-default tells Google
+    this page serves anyone whose language it has no better match for — worth
+    having even without translations, and cheap. Deliberately NOT carrying over
+    <meta name="keywords">: dead since 2009, ignored by every major engine. */}
+<link rel="alternate" hreflang="en" href={url} />
+<link rel="alternate" hreflang="x-default" href={url} />
+
+{noindex && <meta name="robots" content="noindex,nofollow" />}
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="article:modified_time" content={iso(updated)} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="google-site-verification" content="ZE26mpgOCeWoQSoIIBV4QisnaLqq1Khq6hbm88lhpY8" />
+<meta name="msvalidate.01" content="8F125FD0E1ECE7C829B942FB1CE8EB8C" />
+
+<script type="application/ld+json" set:html={JSON.stringify(article)} />
+{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
