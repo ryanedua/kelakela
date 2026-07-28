@@ -70,7 +70,7 @@ const host = new URL(urls[0]).host;
 
 if (host === 'example.com') {
   console.error(`${RED}Sitemap still points at example.com.${OFF}`);
-  console.error(`${DIM}Set SITE.origin in src/data/site.ts to https://farehal.com and rebuild.${OFF}`);
+  console.error(`${DIM}Set SITE.origin in src/data/site.ts to https://sarinlab.stanford.edu and rebuild.${OFF}`);
   process.exit(1);
 }
 
